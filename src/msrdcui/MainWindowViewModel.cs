@@ -8,10 +8,12 @@ namespace msrdcui
     public sealed class MainWindowViewModel : ViewModelBase
     {
         public RelayCommand ConnectCommand { get; private set; }
+        public RelayCommand OpenAboutThisAppUriCommand { get; private set; }
 
         public MainWindowViewModel()
         {
             ConnectCommand = new RelayCommand(ExecuteConnect, CanExecuteConnect);
+            OpenAboutThisAppUriCommand = new RelayCommand(ExecuteOpenAboutThisAppUri);
 
             WindowTitle = "Remote Desktop UI";
             PortNumber = "3389";
@@ -109,6 +111,16 @@ namespace msrdcui
             }
 
             Application.Current.Shutdown();
+        }
+
+        private void ExecuteOpenAboutThisAppUri(object obj)
+        {
+            const string AboutThisAppUri = "https://github.com/tksh164/msrdcui";
+            Process.Start(new ProcessStartInfo()
+            {
+                FileName = AboutThisAppUri,
+                UseShellExecute = true,
+            });
         }
     }
 }

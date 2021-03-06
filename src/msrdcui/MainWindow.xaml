@@ -39,5 +39,9 @@
         </WrapPanel>
         
         <Button Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12" IsDefault="True" Content="Connect" Command="{Binding ConnectCommand}"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
+            <Hyperlink Command="{Binding OpenAboutThisAppUriCommand}">About this app</Hyperlink>
+        </TextBlock>
     </Grid>
 </Window>
