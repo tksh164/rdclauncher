@@ -71,13 +71,14 @@ namespace msrdcui
 
         private static string GetMsrdcExeFilePath()
         {
-            // TODO: user and system x86 & x64, store app
-            const string msrdcExePath = @"C:\Program Files\Remote Desktop\msrdc.exe";
-            if (!File.Exists(msrdcExePath))
-            {
-                throw new FileNotFoundException("msrdc.exe does not exists.", msrdcExePath);
-            }
-            return msrdcExePath;
+            const string MsrdcExeSystemInstallPath = @"C:\Program Files\Remote Desktop\msrdc.exe";
+            if (File.Exists(MsrdcExeSystemInstallPath)) return MsrdcExeSystemInstallPath;
+
+            const string MsrdcExePerUserInstallPath = @"%LocalAppData%\Apps\Remote Desktop\msrdc.exe";
+            var expandedMsrdcExePerUserInstallPath = Environment.ExpandEnvironmentVariables(MsrdcExePerUserInstallPath);
+            if (File.Exists(expandedMsrdcExePerUserInstallPath)) return expandedMsrdcExePerUserInstallPath;
+
+            throw new FileNotFoundException("msrdc.exe does not exists.");
         }
 
         private static string BuildMsrdcArguments(string tempRdpFilePath, string windowTitle)
