@@ -72,7 +72,7 @@ namespace msrdcui
         private static string GetMsrdcExeFilePath()
         {
             // TODO: user and system x86 & x64, store app
-            const string msrdcExePath = @"C:\Program Files\Remote Desktop\msrdc.exe1";
+            const string msrdcExePath = @"C:\Program Files\Remote Desktop\msrdc.exe";
             if (!File.Exists(msrdcExePath))
             {
                 throw new FileNotFoundException("msrdc.exe does not exists.", msrdcExePath);
