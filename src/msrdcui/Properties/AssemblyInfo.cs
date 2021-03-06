@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Remote Desktop UI")]
-[assembly: AssemblyDescription("GUI for msrdc.exe")]
+[assembly: AssemblyTitle("Remote Desktop Client UI")]
+[assembly: AssemblyDescription("GUI for Remote Desktop client (msrdc.exe).")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Remote Desktop UI")]
+[assembly: AssemblyProduct("Remote Desktop Client UI")]
 [assembly: AssemblyCopyright("Copyright © 2021 Takeshi Katano")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
