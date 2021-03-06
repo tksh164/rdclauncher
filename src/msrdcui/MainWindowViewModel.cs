@@ -103,7 +103,7 @@ namespace msrdcui
             catch (FileNotFoundException)
             {
                 const string MsrdcExeNotFoundMessageText = "This application requires the Windows Desktop client. " +
-                    "But cannot found the Windows Desktop client (msrdc.exe). " +
+                    "But cannot found the Windows Desktop client (msrdc.exe) in this system. " +
                     "Click OK if you want to open the Windows Desktop client installer download page, otherwise click Cancel.";
                 var result = MessageBox.Show(MsrdcExeNotFoundMessageText, WindowTitle, MessageBoxButton.OKCancel, MessageBoxImage.Warning, MessageBoxResult.Cancel);
                 if (result == MessageBoxResult.OK)
