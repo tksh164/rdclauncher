@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Threading;
 
 namespace msrdcui
 {
@@ -25,15 +26,13 @@ namespace msrdcui
 
             try
             {
-                using (var process = Process.Start(new ProcessStartInfo()
+                Process.Start(new ProcessStartInfo()
                 {
                     FileName = GetMsrdcExeFilePath(),
                     Arguments = BuildMsrdcArguments(tempRdpFilePath, msrdcWindowTitle),
                     UseShellExecute = false,
-                }))
-                {
-                    process.WaitForExit();
-                }
+                });
+                Thread.Sleep(1000);
             }
             finally
             {
