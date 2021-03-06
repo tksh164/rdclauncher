@@ -38,10 +38,10 @@
             <CheckBox Margin="4,4,12,4" Content="Full screen" IsChecked="{Binding IsFullScreenEnabled}"/>
         </WrapPanel>
         
-        <Button Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12" IsDefault="True" Content="Connect" Command="{Binding ConnectCommand}"/>
-
         <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
             <Hyperlink Command="{Binding OpenAboutThisAppUriCommand}">About this app</Hyperlink>
         </TextBlock>
+
+        <Button Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12" IsDefault="True" Content="Connect" Command="{Binding ConnectCommand}"/>
     </Grid>
 </Window>
