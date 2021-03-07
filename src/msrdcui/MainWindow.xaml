@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:msrdcui"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}"
-        Title="{Binding WindowTitle}" ResizeMode="CanMinimize" Width="500" Height="310" WindowStartupLocation="CenterScreen">
+        Title="{Binding WindowTitle}" ResizeMode="CanMinimize" Width="500" Height="310" WindowStartupLocation="CenterScreen" FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}">
     <Grid Margin="16">
         <Grid.RowDefinitions>
             <RowDefinition Height="34"/>
