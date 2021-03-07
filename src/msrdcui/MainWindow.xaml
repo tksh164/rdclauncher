@@ -23,19 +23,19 @@
 
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Text="Enter the remote computer name and remote port number. The others are optional."/>
 
-        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Computer:"/>
-        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Padding="4" Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Target="{Binding ElementName=RemoteComputer}" Content="_Computer:"/>
+        <TextBox Name="RemoteComputer" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Padding="4" Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Port:"/>
-        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Padding="4" Text="{Binding PortNumber, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Target="{Binding ElementName=RemotePort}" Content="_Port:"/>
+        <TextBox Name="RemotePort" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Padding="4" Text="{Binding PortNumber, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Window title:"/>
-        <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Padding="4" Text="{Binding RdcWindowTitle}"/>
+        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Target="{Binding ElementName=WindowTitle}" Content="_Window title:"/>
+        <TextBox Name="WindowTitle" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Padding="4" Text="{Binding RdcWindowTitle}"/>
 
         <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center">
-            <CheckBox Margin="4,4,12,4" Content="Fit session to window" IsChecked="{Binding IsFitSessionToWindowEnabled}"/>
-            <CheckBox Margin="4,4,12,4" Content="Update the resolution on resize" IsChecked="{Binding IsUpdateResolutionOnResizeEnabled}"/>
-            <CheckBox Margin="4,4,12,4" Content="Full screen" IsChecked="{Binding IsFullScreenEnabled}"/>
+            <CheckBox Margin="4,4,12,4" Content="Fit _session to window" IsChecked="{Binding IsFitSessionToWindowEnabled}"/>
+            <CheckBox Margin="4,4,12,4" Content="Update the _resolution on resize" IsChecked="{Binding IsUpdateResolutionOnResizeEnabled}"/>
+            <CheckBox Margin="4,4,12,4" Content="_Full screen" IsChecked="{Binding IsFullScreenEnabled}"/>
         </WrapPanel>
         
         <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
