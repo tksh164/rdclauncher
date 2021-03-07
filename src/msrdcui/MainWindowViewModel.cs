@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace msrdcui
@@ -25,6 +26,20 @@ namespace msrdcui
         {
             get => _windowTitle;
             set => SetProperty(ref _windowTitle, value);
+        }
+
+        private bool _isInteractableElementsEnabled = true;
+        public bool IsInteractableElementsEnabled
+        {
+            get => _isInteractableElementsEnabled;
+            set => SetProperty(ref _isInteractableElementsEnabled, value);
+        }
+
+        private Visibility _closingMessageVisibility = Visibility.Collapsed;
+        public Visibility ClosingMessageVisibility
+        {
+            get => _closingMessageVisibility;
+            set => SetProperty(ref _closingMessageVisibility, value);
         }
 
         private string _remoteComputer = "";
@@ -86,36 +101,42 @@ namespace msrdcui
             return !string.IsNullOrWhiteSpace(RemoteComputer) && !RemoteComputer.Contains(' ') && uint.TryParse(PortNumber, out _);
         }
 
-        private void ExecuteConnect(object obj)
+        private async void ExecuteConnect(object obj)
         {
-            try
+            IsInteractableElementsEnabled = false;
+            ClosingMessageVisibility = Visibility.Visible;
+
+            await Task.Run(() =>
             {
-                MsrdcExecution.LaunchMsrdc(new MsrdcLaunchSettings()
+                try
                 {
-                    RemoteComputer = RemoteComputer,
-                    RemotePort = uint.Parse(PortNumber),
-                    WindowTitle = RdcWindowTitle,
-                    IsFitSessionToWindowEnabled = IsFitSessionToWindowEnabled,
-                    IsUpdateResolutionOnResizeEnabled = IsUpdateResolutionOnResizeEnabled,
-                    IsFullScreenEnabled = IsFullScreenEnabled,
-                });
-            }
-            catch (FileNotFoundException)
-            {
-                const string MsrdcExeNotFoundMessageText = "This application requires the Windows Desktop client. " +
-                    "But cannot found the Windows Desktop client (msrdc.exe) in this system. " +
-                    "Click OK if you want to open the Windows Desktop client installer download page, otherwise click Cancel.";
-                var result = MessageBox.Show(MsrdcExeNotFoundMessageText, WindowTitle, MessageBoxButton.OKCancel, MessageBoxImage.Warning, MessageBoxResult.Cancel);
-                if (result == MessageBoxResult.OK)
-                {
-                    const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
-                    Process.Start(new ProcessStartInfo()
+                    MsrdcExecution.LaunchMsrdc(new MsrdcLaunchSettings()
                     {
-                        FileName = WindowsDesktopClientDownloadUri,
-                        UseShellExecute = true,
+                        RemoteComputer = RemoteComputer,
+                        RemotePort = uint.Parse(PortNumber),
+                        WindowTitle = RdcWindowTitle,
+                        IsFitSessionToWindowEnabled = IsFitSessionToWindowEnabled,
+                        IsUpdateResolutionOnResizeEnabled = IsUpdateResolutionOnResizeEnabled,
+                        IsFullScreenEnabled = IsFullScreenEnabled,
                     });
                 }
-            }
+                catch (FileNotFoundException)
+                {
+                    const string MsrdcExeNotFoundMessageText = "This application requires the Windows Desktop client. " +
+                        "But cannot found the Windows Desktop client (msrdc.exe) in this system. " +
+                        "Click OK if you want to open the Windows Desktop client installer download page, otherwise click Cancel.";
+                    var result = MessageBox.Show(MsrdcExeNotFoundMessageText, WindowTitle, MessageBoxButton.OKCancel, MessageBoxImage.Warning, MessageBoxResult.Cancel);
+                    if (result == MessageBoxResult.OK)
+                    {
+                        const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
+                        Process.Start(new ProcessStartInfo()
+                        {
+                            FileName = WindowsDesktopClientDownloadUri,
+                            UseShellExecute = true,
+                        });
+                    }
+                }
+            });
 
             Application.Current.Shutdown();
         }
