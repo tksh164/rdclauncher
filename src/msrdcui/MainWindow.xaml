@@ -9,10 +9,10 @@
         Title="{Binding WindowTitle}" ResizeMode="CanMinimize" Width="500" Height="310">
     <Grid Margin="16">
         <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -23,13 +23,13 @@
 
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top" Text="Enter the remote computer name and remote port number. The others are optional."/>
 
-        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Content="Computer:"/>
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Computer:"/>
         <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Padding="4" Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Content="Port:"/>
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Port:"/>
         <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Padding="4" Text="{Binding PortNumber, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Content="Window title:"/>
+        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Window title:"/>
         <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Padding="4" Text="{Binding RdcWindowTitle}"/>
 
         <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Center">
