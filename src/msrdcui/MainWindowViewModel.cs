@@ -123,11 +123,12 @@ namespace msrdcui
             }
             catch (FileNotFoundException)
             {
-                const string MsrdcExeNotFoundMessageText = "This application requires the Windows Desktop client. " +
-                    "But cannot found the Windows Desktop client (msrdc.exe) in this system. " +
-                    "Click OK if you want to open the Windows Desktop client installer download page, otherwise click Cancel.";
-                var result = MessageBox.Show(MsrdcExeNotFoundMessageText, WindowTitle, MessageBoxButton.OKCancel, MessageBoxImage.Warning, MessageBoxResult.Cancel);
-                if (result == MessageBoxResult.OK)
+                const string MsrdcExeNotFoundMessageText = "Couldn't found the Windows Desktop client (msrdc.exe) on this system. " +
+                    "This application requires the Windows Desktop client installation." + "\n\n" +
+                    "Do you want to download the Windows Desktop client? " +
+                    "Click Yes if you want to open the Windows Desktop client installer download page, otherwise click No.";
+                var result = MessageBox.Show(MsrdcExeNotFoundMessageText, WindowTitle, MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.Yes);
+                if (result == MessageBoxResult.Yes)
                 {
                     const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
                     Process.Start(new ProcessStartInfo()
