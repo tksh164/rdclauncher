@@ -106,9 +106,9 @@ namespace msrdcui
             IsInteractableElementsEnabled = false;
             ClosingMessageVisibility = Visibility.Visible;
 
-            await Task.Run(() =>
+            try
             {
-                try
+                await Task.Run(() =>
                 {
                     MsrdcExecution.LaunchMsrdc(new MsrdcLaunchSettings()
                     {
@@ -119,24 +119,24 @@ namespace msrdcui
                         IsUpdateResolutionOnResizeEnabled = IsUpdateResolutionOnResizeEnabled,
                         IsFullScreenEnabled = IsFullScreenEnabled,
                     });
-                }
-                catch (FileNotFoundException)
+                });
+            }
+            catch (FileNotFoundException)
+            {
+                const string MsrdcExeNotFoundMessageText = "This application requires the Windows Desktop client. " +
+                    "But cannot found the Windows Desktop client (msrdc.exe) in this system. " +
+                    "Click OK if you want to open the Windows Desktop client installer download page, otherwise click Cancel.";
+                var result = MessageBox.Show(MsrdcExeNotFoundMessageText, WindowTitle, MessageBoxButton.OKCancel, MessageBoxImage.Warning, MessageBoxResult.Cancel);
+                if (result == MessageBoxResult.OK)
                 {
-                    const string MsrdcExeNotFoundMessageText = "This application requires the Windows Desktop client. " +
-                        "But cannot found the Windows Desktop client (msrdc.exe) in this system. " +
-                        "Click OK if you want to open the Windows Desktop client installer download page, otherwise click Cancel.";
-                    var result = MessageBox.Show(MsrdcExeNotFoundMessageText, WindowTitle, MessageBoxButton.OKCancel, MessageBoxImage.Warning, MessageBoxResult.Cancel);
-                    if (result == MessageBoxResult.OK)
+                    const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
+                    Process.Start(new ProcessStartInfo()
                     {
-                        const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
-                        Process.Start(new ProcessStartInfo()
-                        {
-                            FileName = WindowsDesktopClientDownloadUri,
-                            UseShellExecute = true,
-                        });
-                    }
+                        FileName = WindowsDesktopClientDownloadUri,
+                        UseShellExecute = true,
+                    });
                 }
-            });
+            }
 
             Application.Current.Shutdown();
         }
