@@ -79,6 +79,7 @@
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="2"
                    HorizontalAlignment="Center" VerticalAlignment="Center"
                    Visibility="{Binding ClosingMessageVisibility}"
-                   Text="A new Remote Desktop client was launched.&#x0a;This app will be automatically close soon."/>
+                   TextAlignment="Center"
+                   Text="A new Remote Desktop client window was launched.&#x0a;This app will be automatically close soon."/>
     </Grid>
 </Window>
