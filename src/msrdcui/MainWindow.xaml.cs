@@ -10,7 +10,13 @@ namespace msrdcui
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainWindowViewModel();
+            this.DataContext = new MainWindowViewModel()
+            {
+                PortNumber = Properties.Settings.Default.PortNumber,
+                IsFitSessionToWindowEnabled = Properties.Settings.Default.DefaultFitSessionToWindowEnabled,
+                IsUpdateResolutionOnResizeEnabled = Properties.Settings.Default.DefaultUpdateResolutionOnResizeEnabled,
+                IsFullScreenEnabled = Properties.Settings.Default.DefaultFullScreenEnabled,
+            };
         }
     }
 }
