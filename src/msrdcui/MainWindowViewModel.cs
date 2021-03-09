@@ -17,8 +17,6 @@ namespace msrdcui
             OpenAboutThisAppUriCommand = new RelayCommand(ExecuteOpenAboutThisAppUri);
 
             WindowTitle = "Remote Desktop Client UI";
-            PortNumber = "3389";
-            IsUpdateResolutionOnResizeEnabled = true;
         }
 
         private string _windowTitle;
