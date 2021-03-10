@@ -7,7 +7,11 @@ namespace msrdcui
     public class EditableComboBoxSpecialBehaviour
     {
         public static readonly DependencyProperty SelectTextBoxEntireTextAtFirstTimeProperty =
-            DependencyProperty.RegisterAttached("SelectTextBoxEntireTextAtFirstTime", typeof(bool), typeof(EditableComboBoxSpecialBehaviour), new UIPropertyMetadata(OnSelectTextBoxEntireTextAtFirstTimeChanged));
+            DependencyProperty.RegisterAttached(
+                "SelectTextBoxEntireTextAtFirstTime",
+                typeof(bool),
+                typeof(EditableComboBoxSpecialBehaviour),
+                new UIPropertyMetadata(OnSelectTextBoxEntireTextAtFirstTimeChanged));
 
         public static bool GetSelectTextBoxEntireTextAtFirstTime(DependencyObject obj)
         {
