@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -53,6 +54,13 @@ namespace msrdcui
             }
         }
 
+        private ObservableCollection<string> _remoteComputerHistory = new ObservableCollection<string>();
+        public ObservableCollection<string> RemoteComputerHistory
+        {
+            get => _remoteComputerHistory;
+            set => SetProperty(ref _remoteComputerHistory, value);
+        }
+
         private string _portNumber = "";
         public string PortNumber
         {
@@ -101,8 +109,12 @@ namespace msrdcui
 
         private async void ExecuteConnect(object obj)
         {
+            // Disable and hide the interactable elements.
             IsInteractableElementsEnabled = false;
             ClosingMessageVisibility = Visibility.Visible;
+
+            // Save a new history as user settings.
+            PersistentUserSettings.SaveRemoteComputerHistory(RemoteComputer, RemoteComputerHistory);
 
             try
             {

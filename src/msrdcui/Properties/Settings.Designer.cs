@@ -58,5 +58,125 @@ namespace msrdcui.Properties {
                 return ((bool)(this["DefaultFullScreenEnabled"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem01 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem01"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem01"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem02 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem02"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem02"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem03 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem03"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem03"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem04 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem04"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem04"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem05 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem05"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem05"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem06 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem06"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem06"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem07 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem07"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem07"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem08 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem08"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem08"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem09 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem09"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem09"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RemoteComputerHistoryItem10 {
+            get {
+                return ((string)(this["RemoteComputerHistoryItem10"]));
+            }
+            set {
+                this["RemoteComputerHistoryItem10"] = value;
+            }
+        }
     }
 }
