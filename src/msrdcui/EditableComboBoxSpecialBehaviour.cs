@@ -4,7 +4,7 @@ using System.Windows.Controls;
 
 namespace msrdcui
 {
-    public class EditableComboBoxSpecialBehaviour
+    public static class EditableComboBoxSpecialBehaviour
     {
         public static readonly DependencyProperty SelectTextBoxEntireTextAtFirstTimeProperty =
             DependencyProperty.RegisterAttached(
