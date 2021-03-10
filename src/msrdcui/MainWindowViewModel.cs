@@ -48,7 +48,7 @@ namespace msrdcui
             set
             {
                 var trimedValue = value.Trim();
-                 if (SetProperty(ref _remoteComputer, trimedValue))
+                if (SetProperty(ref _remoteComputer, trimedValue))
                 {
                     ConnectCommand.RaiseCanExecuteChanged();
                 }
