@@ -36,6 +36,7 @@
                   VerticalAlignment="Center" Padding="4"
                   IsEnabled="{Binding IsInteractableElementsEnabled}"
                   IsEditable="True"
+                  local:EditableComboBoxSpecialBehaviour.SelectTextBoxEntireTextAtFirstTime="True"
                   ItemsSource="{Binding RemoteComputerHistory}"
                   Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
 
