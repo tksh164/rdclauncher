@@ -70,7 +70,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MsrdcExecution.cs" />
+    <Compile Include="PersistentUserSettings.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="EditableComboBoxSpecialBehaviour.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

@@ -31,11 +31,14 @@
         <Label Grid.Row="1" Grid.Column="0"
                HorizontalAlignment="Right" VerticalAlignment="Center"
                Target="{Binding ElementName=RemoteComputer}" Content="_Computer:"/>
-        <TextBox Name="RemoteComputer"
-                 Grid.Row="1" Grid.Column="1"
-                 VerticalAlignment="Center" Padding="4"
-                 IsEnabled="{Binding IsInteractableElementsEnabled}"
-                 Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
+        <ComboBox Name="RemoteComputer"
+                  Grid.Row="1" Grid.Column="1"
+                  VerticalAlignment="Center" Padding="4"
+                  IsEnabled="{Binding IsInteractableElementsEnabled}"
+                  IsEditable="True"
+                  local:EditableComboBoxSpecialBehaviour.SelectTextBoxEntireTextAtFirstTime="True"
+                  ItemsSource="{Binding RemoteComputerHistory}"
+                  Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label Grid.Row="2" Grid.Column="0"
                HorizontalAlignment="Right" VerticalAlignment="Center"

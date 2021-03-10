@@ -10,13 +10,20 @@ namespace msrdcui
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainWindowViewModel()
+            var vm = new MainWindowViewModel()
             {
                 PortNumber = Properties.Settings.Default.PortNumber,
                 IsFitSessionToWindowEnabled = Properties.Settings.Default.DefaultFitSessionToWindowEnabled,
                 IsUpdateResolutionOnResizeEnabled = Properties.Settings.Default.DefaultUpdateResolutionOnResizeEnabled,
                 IsFullScreenEnabled = Properties.Settings.Default.DefaultFullScreenEnabled,
             };
+            var remoteComputerHistory = PersistentUserSettings.ReadRemoteComputerHistory();
+            foreach (var historyItem in remoteComputerHistory)
+            {
+                vm.RemoteComputerHistory.Add(historyItem);
+            }
+            vm.RemoteComputer = remoteComputerHistory[0];
+            this.DataContext = vm;
         }
     }
 }
