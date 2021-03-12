@@ -52,11 +52,13 @@
         <Label Grid.Row="3" Grid.Column="0"
                HorizontalAlignment="Right" VerticalAlignment="Center"
                Target="{Binding ElementName=WindowTitle}" Content="_Window title:"/>
-        <TextBox Name="WindowTitle"
-                 Grid.Row="3" Grid.Column="1"
-                 VerticalAlignment="Center" Padding="4"
-                 IsEnabled="{Binding IsInteractableElementsEnabled}" 
-                 Text="{Binding RdcWindowTitle}"/>
+        <ComboBox Name="WindowTitle"
+                  Grid.Row="3" Grid.Column="1"
+                  VerticalAlignment="Center" Padding="4"
+                  IsEnabled="{Binding IsInteractableElementsEnabled}"
+                  IsEditable="True"
+                  ItemsSource="{Binding RdcWindowTitleHistory}"
+                  Text="{Binding RdcWindowTitle}"/>
 
         <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
                    Orientation="Horizontal" VerticalAlignment="Center"
