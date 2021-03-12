@@ -178,5 +178,125 @@ namespace msrdcui.Properties {
                 this["RemoteComputerHistoryItem10"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem01 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem01"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem01"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem02 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem02"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem02"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem03 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem03"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem03"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem04 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem04"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem04"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem05 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem05"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem05"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem06 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem06"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem06"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem07 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem07"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem07"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem08 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem08"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem08"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem09 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem09"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem09"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RdcWindowTitleHistoryItem10 {
+            get {
+                return ((string)(this["RdcWindowTitleHistoryItem10"]));
+            }
+            set {
+                this["RdcWindowTitleHistoryItem10"] = value;
+            }
+        }
     }
 }

@@ -6,53 +6,74 @@ namespace msrdcui
     {
         private const int MaxHistoryLength = 10;
         private const string RemoteComputerHistoryItemFormatString = "RemoteComputerHistoryItem{0:00}";
+        private const string RdcWindowTitleHistoryItemFormatString = "RdcWindowTitleHistoryItem{0:00}";
 
         public static IReadOnlyList<string> ReadRemoteComputerHistory()
         {
-            var remoteComputerHistory = new List<string>(MaxHistoryLength);
-            for (int i = 0; i < MaxHistoryLength; i++)
-            {
-                var propertyName = string.Format(RemoteComputerHistoryItemFormatString, i + 1);
-                var historyItem = Properties.Settings.Default[propertyName] as string;
-                if (!string.IsNullOrWhiteSpace(historyItem))
-                {
-                    remoteComputerHistory.Add(historyItem);
-                }
-            }
-            return remoteComputerHistory;
+            return ReadHistory(MaxHistoryLength, RemoteComputerHistoryItemFormatString);
         }
 
         public static void SaveRemoteComputerHistory(string latestRemoteComputer, IReadOnlyList<string> currentRemoteComputerHistory)
         {
-            var newRemoteComputerHistory = BuildNewRemoteComputerHistory(latestRemoteComputer, currentRemoteComputerHistory);
-            for (int i = 0; i < newRemoteComputerHistory.Count; i++)
+            SaveHistory(latestRemoteComputer, currentRemoteComputerHistory, MaxHistoryLength, RemoteComputerHistoryItemFormatString);
+        }
+
+        public static IReadOnlyList<string> ReadRdcWindowTitleHistory()
+        {
+            return ReadHistory(MaxHistoryLength, RdcWindowTitleHistoryItemFormatString);
+        }
+
+        public static void SaveRdcWindowTitleHistory(string latestRdcWindowTitle, IReadOnlyList<string> currentRdcWindowTitleHistory)
+        {
+            SaveHistory(latestRdcWindowTitle, currentRdcWindowTitleHistory, MaxHistoryLength, RdcWindowTitleHistoryItemFormatString);
+        }
+
+        private static IReadOnlyList<string> ReadHistory(int maxHistoryLength, string historyItemFormatString)
+        {
+            var history = new List<string>(maxHistoryLength);
+            for (int i = 0; i < maxHistoryLength; i++)
             {
-                var propertyName = string.Format(RemoteComputerHistoryItemFormatString, i + 1);
-                Properties.Settings.Default[propertyName] = newRemoteComputerHistory[i];
+                var propertyName = string.Format(historyItemFormatString, i + 1);
+                var historyItem = Properties.Settings.Default[propertyName] as string;
+                if (!string.IsNullOrWhiteSpace(historyItem))
+                {
+                    history.Add(historyItem);
+                }
+            }
+            return history;
+        }
+
+        private static void SaveHistory(string latestHistoryItem, IReadOnlyList<string> currentHistory, int maxHistoryLength, string historyItemFormatString)
+        {
+            var newHistory = BuildNewHistory(latestHistoryItem, currentHistory, maxHistoryLength);
+            for (int i = 0; i < newHistory.Count; i++)
+            {
+                var propertyName = string.Format(historyItemFormatString, i + 1);
+                Properties.Settings.Default[propertyName] = newHistory[i];
             }
             Properties.Settings.Default.Save();
         }
 
-        private static IReadOnlyList<string> BuildNewRemoteComputerHistory(string latestRemoteComputer, IReadOnlyList<string> currentRemoteComputerHistory)
+        private static IReadOnlyList<string> BuildNewHistory(string latestHistoryItem, IReadOnlyList<string> currentHistory, int maxHistoryLength)
         {
-            var newRemoteComputerHistory = new List<string>(MaxHistoryLength)
+            var newHistory = new List<string>(maxHistoryLength)
             {
-                latestRemoteComputer
+                latestHistoryItem
             };
 
-            int MaxCarryOveredItemCount = MaxHistoryLength - 1;
+            int maxCarryOveredItemCount = maxHistoryLength - 1;
             int carryOveredItemCount = 0;
-            for (int i = 0; i < currentRemoteComputerHistory.Count; i++)
+            for (int i = 0; i < currentHistory.Count; i++)
             {
-                if (currentRemoteComputerHistory[i] != latestRemoteComputer)
+                if (currentHistory[i] != latestHistoryItem)
                 {
-                    newRemoteComputerHistory.Add(currentRemoteComputerHistory[i]);
+                    newHistory.Add(currentHistory[i]);
                     carryOveredItemCount++;
                 }
-                if (carryOveredItemCount >= MaxCarryOveredItemCount) break;
+                if (carryOveredItemCount >= maxCarryOveredItemCount) break;
             }
 
-            return newRemoteComputerHistory;
+            return newHistory;
         }
     }
 }

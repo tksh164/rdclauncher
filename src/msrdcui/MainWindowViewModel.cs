@@ -82,6 +82,13 @@ namespace msrdcui
             set => SetProperty(ref _rdcWindowTitle, value);
         }
 
+        private ObservableCollection<string> _rdcWindowTitleHistory = new ObservableCollection<string>();
+        public ObservableCollection<string> RdcWindowTitleHistory
+        {
+            get => _rdcWindowTitleHistory;
+            set => SetProperty(ref _rdcWindowTitleHistory, value);
+        }
+
         private bool _isFitSessionToWindowEnabled = false;
         public bool IsFitSessionToWindowEnabled
         {
@@ -116,6 +123,7 @@ namespace msrdcui
 
             // Save a new history as user settings.
             PersistentUserSettings.SaveRemoteComputerHistory(RemoteComputer, RemoteComputerHistory);
+            PersistentUserSettings.SaveRdcWindowTitleHistory(RdcWindowTitle, RdcWindowTitleHistory);
 
             try
             {
