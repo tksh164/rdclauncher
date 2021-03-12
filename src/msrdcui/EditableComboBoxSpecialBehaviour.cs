@@ -49,9 +49,14 @@ namespace msrdcui
         {
             if (!(sender is TextBox textBox)) return;
 
-            // Select entire text
-            textBox.SelectionStart = 0;
-            textBox.SelectionLength = textBox.Text.Length;
+            // Select the text only when it is changed programmatically (e.g. binding).
+            // Not select the text it is input by user even if that change is first time.
+            if (textBox.CaretIndex == 0)
+            {
+                // Select entire text
+                textBox.SelectionStart = 0;
+                textBox.SelectionLength = textBox.Text.Length;
+            }
 
             // Remove this event because this event fired at first time only.
             textBox.TextChanged -= TextBox_TextChanged;
