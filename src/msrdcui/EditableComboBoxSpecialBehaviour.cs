@@ -38,11 +38,17 @@ namespace msrdcui
         {
             if (!(sender is ComboBox comboBox)) return;
 
-            comboBox.ApplyTemplate();
-            if (comboBox.Template.FindName("PART_EditableTextBox", comboBox) is TextBox textBox)
+            var textBox = GetEditableTextBoxInComboBox(comboBox);
+            if (textBox != null)
             {
                 textBox.TextChanged += TextBox_TextChanged;
             }
+        }
+
+        private static TextBox GetEditableTextBoxInComboBox(ComboBox comboBox)
+        {
+            comboBox.ApplyTemplate();
+            return comboBox.Template.FindName("PART_EditableTextBox", comboBox) as TextBox;
         }
 
         private static void TextBox_TextChanged(object sender, TextChangedEventArgs e)
