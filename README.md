@@ -2,9 +2,9 @@
 
 This small launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc). You can gain the benefit of the Remote Desktop client. e.g. Advanced display settings, window title naming.
 
-![Screenshot](./media/screenshot01.png)
+<img src="./media/screenshot01.png" width="50%" alt="Screenshot of the app.">
 
-![Screenshot](./media/screenshot02.png)
+<img src="./media/screenshot02.png" width="70%" alt="Screenshot of the advanced display settings in the Remote Desktop client.">
 
 ## Prerequisites
 
