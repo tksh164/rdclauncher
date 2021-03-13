@@ -15,8 +15,7 @@ namespace msrdcui
         {
             ConnectCommand = new RelayCommand(ExecuteConnect, CanExecuteConnect);
             OpenAboutThisAppUriCommand = new RelayCommand(ExecuteOpenAboutThisAppUri);
-
-            WindowTitle = "Remote Desktop Client Launcher";
+            WindowTitle = WindowTitleBuilder.GetWindowTitle();
         }
 
         private string _windowTitle;
