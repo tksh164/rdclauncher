@@ -10,7 +10,11 @@ namespace msrdcui
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = GetInitializedViewModel();
+        }
 
+        private static MainWindowViewModel GetInitializedViewModel()
+        {
             var vm = new MainWindowViewModel()
             {
                 PortNumber = Properties.Settings.Default.PortNumber,
@@ -32,7 +36,7 @@ namespace msrdcui
                 vm.RdcWindowTitleHistory.Add(historyItem);
             }
 
-            DataContext = vm;
+            return vm;
         }
     }
 }

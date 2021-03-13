@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -150,11 +149,7 @@ namespace msrdcui
                 if (result == MessageBoxResult.Yes)
                 {
                     const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
-                    Process.Start(new ProcessStartInfo()
-                    {
-                        FileName = WindowsDesktopClientDownloadUri,
-                        UseShellExecute = true,
-                    });
+                    UriNavigator.Navigate(WindowsDesktopClientDownloadUri);
                 }
             }
 
@@ -164,11 +159,7 @@ namespace msrdcui
         private void ExecuteOpenAboutThisAppUri(object obj)
         {
             const string AboutThisAppUri = "https://github.com/tksh164/msrdcui";
-            Process.Start(new ProcessStartInfo()
-            {
-                FileName = AboutThisAppUri,
-                UseShellExecute = true,
-            });
+            UriNavigator.Navigate(AboutThisAppUri);
         }
     }
 }
