@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D9C4CC56-F429-4EF5-AD4A-CCB25A2A1BD3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>msrdcui</RootNamespace>
+    <RootNamespace>rdclauncher</RootNamespace>
     <AssemblyName>rdclauncher</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
