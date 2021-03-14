@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace msrdcui
+namespace rdclauncher
 {
     public class RelayCommand : ICommand
     {

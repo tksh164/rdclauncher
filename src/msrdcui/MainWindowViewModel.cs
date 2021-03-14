@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace msrdcui
+namespace rdclauncher
 {
     public sealed class MainWindowViewModel : ViewModelBase
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace msrdcui
+namespace rdclauncher
 {
     internal static class PersistentUserSettings
     {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Threading;
 
-namespace msrdcui
+namespace rdclauncher
 {
     internal sealed class MsrdcLaunchSettings
     { 

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace msrdcui
+namespace rdclauncher
 {
     /// <summary>
     /// Interaction logic for App.xaml
