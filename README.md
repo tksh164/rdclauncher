@@ -1,6 +1,6 @@
-# Remote Desktop Client Launcher
+# RDC Launcher
 
-This small launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc). You can leverage the benefit of the Remote Desktop client. e.g. Advanced display settings, window title naming.
+The RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc). You can leverage the benefit of the Remote Desktop client. e.g. Advanced display settings, window title naming.
 
 <img src="./media/screenshot01.png" width="50%" alt="Screenshot of the app.">
 
