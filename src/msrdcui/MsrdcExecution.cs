@@ -31,6 +31,7 @@ namespace msrdcui
                     FileName = GetMsrdcExeFilePath(),
                     Arguments = BuildMsrdcArguments(tempRdpFilePath, msrdcWindowTitle),
                     UseShellExecute = false,
+                    CreateNoWindow = true,
                 });
                 Thread.Sleep(1000);
             }
@@ -85,6 +86,7 @@ namespace msrdcui
             var options = new List<string>
             {
                 WrapWithDoubleQuote(tempRdpFilePath),
+                string.Format("/p:{0}", Process.GetCurrentProcess().Id),
                 string.Format("/n:{0}", WrapWithDoubleQuote(windowTitle)),
             };
             return string.Join(" ", options);
