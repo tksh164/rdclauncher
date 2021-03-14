@@ -34,4 +34,4 @@ You can build the project using Visual Studio 2019.
 
 ## License
 
-Copyright (c) 2021-present Takeshi Katano. All rights reserved. This software is released under the [MIT License](https://github.com/tksh164/msrdcui/blob/master/LICENSE).
+Copyright (c) 2021-present Takeshi Katano. All rights reserved. This software is released under the [MIT License](https://github.com/tksh164/rdclauncher/blob/master/LICENSE).
