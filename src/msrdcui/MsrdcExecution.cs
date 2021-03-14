@@ -31,6 +31,7 @@ namespace msrdcui
                     FileName = GetMsrdcExeFilePath(),
                     Arguments = BuildMsrdcArguments(tempRdpFilePath, msrdcWindowTitle),
                     UseShellExecute = false,
+                    CreateNoWindow = true,
                 });
                 Thread.Sleep(1000);
             }
