@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace msrdcui
+namespace rdclauncher
 {
     public static class EditableComboBoxSpecialBehaviour
     {

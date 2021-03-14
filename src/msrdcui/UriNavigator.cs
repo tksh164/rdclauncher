@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace msrdcui
+namespace rdclauncher
 {
     internal static class UriNavigator
     {

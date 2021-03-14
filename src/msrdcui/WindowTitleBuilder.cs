@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace msrdcui
+namespace rdclauncher
 {
     internal static class WindowTitleBuilder
     {

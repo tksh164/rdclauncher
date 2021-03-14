@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace msrdcui
+namespace rdclauncher
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {

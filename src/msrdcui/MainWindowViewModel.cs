@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace msrdcui
+namespace rdclauncher
 {
     public sealed class MainWindowViewModel : ViewModelBase
     {
@@ -157,7 +157,7 @@ namespace msrdcui
 
         private void ExecuteOpenAboutThisAppUri(object obj)
         {
-            const string AboutThisAppUri = "https://github.com/tksh164/msrdcui";
+            const string AboutThisAppUri = "https://github.com/tksh164/rdclauncher";
             UriNavigator.Navigate(AboutThisAppUri);
         }
     }
