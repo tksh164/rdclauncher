@@ -16,7 +16,7 @@ This small launcher allows to use the Remote Desktop client (msrdc) as like the 
 
 ## Install
 
-1. Download [the zip file](https://github.com/tksh164/msrdcui/releases/latest).
+1. Download [the zip file](https://github.com/tksh164/rdclauncher/releases/latest).
     - After the download the zip file, you can unblock the zip file from the file's property or using [Unblock-File](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file) cmdlet.
 2. Extract to files from the zip file. You can extract files from the `Extract All...` context menu in the File Explorer or using [Expand-Archive](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive) cmdlet.
 3. Locate to the extracted files to anywhere you like.
