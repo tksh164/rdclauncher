@@ -85,6 +85,7 @@ namespace msrdcui
             var options = new List<string>
             {
                 WrapWithDoubleQuote(tempRdpFilePath),
+                string.Format("/p:{0}", Process.GetCurrentProcess().Id),
                 string.Format("/n:{0}", WrapWithDoubleQuote(windowTitle)),
             };
             return string.Join(" ", options);
