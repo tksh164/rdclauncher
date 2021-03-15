@@ -35,3 +35,5 @@ You can build the project using Visual Studio 2019.
 ## License
 
 Copyright (c) 2021-present Takeshi Katano. All rights reserved. This software is released under the [MIT License](https://github.com/tksh164/rdclauncher/blob/master/LICENSE).
+
+Disclaimer: The projects stored herein are my own personal projects and do not related my employer's any way.
