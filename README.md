@@ -25,8 +25,8 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
 ## Notes
 
-- You can change the default settings of this app by edit the `msrdcui.exe.config` that placed in the same place as the application's executable file (`msrdcui.exe`).
-- The history file located at `%LocalAppData%\msrdcui\msrdcui.exe_Url_<random-string>\<version>\user.config`. Delete this file if you want to delete the history.
+- You can change the default settings of this app by edit the `rdclauncher.exe.config` that placed in the same place as the application's executable file (`rdclauncher.exe`).
+- The history file located at `%LocalAppData%\rdclauncher\rdclauncher.exe_Url_<random-string>\<version>\user.config`. Delete this file if you want to delete the history.
 
 ## Building from source
 
