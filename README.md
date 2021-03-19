@@ -26,6 +26,39 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 ## Notes
 
 - You can change the default settings of this app by edit the `rdclauncher.exe.config` that placed in the same place as the application's executable file (`rdclauncher.exe`).
+
+  - Port number
+
+    ```
+    <setting name="PortNumber" serializeAs="String">
+        <value>3389</value>
+    </setting>
+    ```
+
+  - Fit session to window
+
+    ```
+    <setting name="DefaultFitSessionToWindowEnabled" serializeAs="String">
+        <value>False</value>
+    </setting>
+    ```
+
+  - Update resolution on resize
+
+    ```
+    <setting name="DefaultUpdateResolutionOnResizeEnabled" serializeAs="String">
+        <value>True</value>
+    </setting>
+    ```
+
+  - Full screen
+
+    ```
+    <setting name="DefaultFullScreenEnabled" serializeAs="String">
+        <value>False</value>
+    </setting>
+    ```
+
 - The history file located at `%LocalAppData%\rdclauncher\rdclauncher.exe_Url_<random-string>\<version>\user.config`. Delete this file if you want to delete the history.
 
 ## Building from source
