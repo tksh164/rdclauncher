@@ -10,6 +10,16 @@
         Width="500" Height="310"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
         FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}">
+    <Window.Resources>
+        <DrawingImage x:Key="DeleteIcon_Segoe_MDL2_Assets_e74d">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V2048 H2048 V0 H0 Z">
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M2048,2048z M0,0z M1792,384L1664,384 1664,1856Q1664,1896 1649,1931 1634,1966 1608,1992 1582,2018 1547,2033 1512,2048 1472,2048L448,2048Q408,2048 373,2033 338,2018 312,1992 286,1966 271,1931 256,1896 256,1856L256,384 128,384 128,256 640,256 640,128Q640,101 650,78 660,55 677,38 694,21 718,10 742,-1 768,0L1152,0Q1179,0 1202,10 1225,20 1242,37 1259,54 1270,78 1281,102 1280,128L1280,256 1792,256 1792,384z M768,256L1152,256 1152,128 768,128 768,256z M1536,384L384,384 384,1856Q384,1882 403,1901 422,1920 448,1920L1472,1920Q1498,1920 1517,1901 1536,1882 1536,1856L1536,384z M768,1664L640,1664 640,640 768,640 768,1664z M1024,1664L896,1664 896,640 1024,640 1024,1664z M1280,1664L1152,1664 1152,640 1280,640 1280,1664z" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+    </Window.Resources>
+ 
     <Grid Margin="16">
         <Grid.RowDefinitions>
             <RowDefinition Height="34"/>
@@ -22,9 +32,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="90"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
                    VerticalAlignment="Top"
                    Text="Enter the remote computer name and remote port number. The others are optional."/>
 
@@ -39,6 +50,12 @@
                   local:EditableComboBoxSpecialBehaviour.SelectTextBoxEntireTextAtFirstTime="True"
                   ItemsSource="{Binding RemoteComputerHistory}"
                   Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Grid.Row="1" Grid.Column="2"
+                HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5"
+                IsEnabled="{Binding IsInteractableElementsEnabled}"
+                BorderThickness="0" Background="Transparent">
+            <Image Source="{StaticResource DeleteIcon_Segoe_MDL2_Assets_e74d}" Width="16"/>
+        </Button>
 
         <Label Grid.Row="2" Grid.Column="0"
                HorizontalAlignment="Right" VerticalAlignment="Center"
@@ -59,8 +76,14 @@
                   IsEditable="True"
                   ItemsSource="{Binding RdcWindowTitleHistory}"
                   Text="{Binding RdcWindowTitle}"/>
+        <Button Grid.Row="3" Grid.Column="2"
+                HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5"
+                IsEnabled="{Binding IsInteractableElementsEnabled}"
+                BorderThickness="0" Background="Transparent">
+            <Image Source="{StaticResource DeleteIcon_Segoe_MDL2_Assets_e74d}" Width="16"/>
+        </Button>
 
-        <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+        <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
                    Orientation="Horizontal" VerticalAlignment="Center"
                    IsEnabled="{Binding IsInteractableElementsEnabled}">
             <CheckBox Margin="4,4,12,4" Content="Fit _session to window" IsChecked="{Binding IsFitSessionToWindowEnabled}"/>
@@ -73,15 +96,15 @@
                        Command="{Binding OpenAboutThisAppUriCommand}">About this app</Hyperlink>
         </TextBlock>
 
-        <Button Grid.Row="5" Grid.Column="1"
+        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12"
                 IsDefault="True" IsEnabled="{Binding IsInteractableElementsEnabled}"
                 Command="{Binding ConnectCommand}" Content="Connect"/>
 
-        <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="2"
+        <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="3"
                    Visibility="{Binding ClosingMessageVisibility}"
                    Fill="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="2"
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="3"
                    HorizontalAlignment="Center" VerticalAlignment="Center"
                    Visibility="{Binding ClosingMessageVisibility}"
                    TextAlignment="Center"
