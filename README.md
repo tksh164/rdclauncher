@@ -27,7 +27,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
 - You can change the default settings of this app by edit the `rdclauncher.exe.config` that placed in the same place as the application's executable file (`rdclauncher.exe`).
 
-  - Port number
+  - `PortNumber`: The default port number.
 
     ```
     <setting name="PortNumber" serializeAs="String">
@@ -35,7 +35,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
     </setting>
     ```
 
-  - Fit session to window
+  - `DefaultFitSessionToWindowEnabled`: If set True, the `Fit session to window` checkbox is checked by default.
 
     ```
     <setting name="DefaultFitSessionToWindowEnabled" serializeAs="String">
@@ -43,7 +43,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
     </setting>
     ```
 
-  - Update resolution on resize
+  - `DefaultUpdateResolutionOnResizeEnabled`: If set True, the `Update resolution on resize` checkbox is checked by default.
 
     ```
     <setting name="DefaultUpdateResolutionOnResizeEnabled" serializeAs="String">
@@ -51,7 +51,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
     </setting>
     ```
 
-  - Full screen
+  - `DefaultFullScreenEnabled`: If set True, the `Full screen` checkbox is checked by default.
 
     ```
     <setting name="DefaultFullScreenEnabled" serializeAs="String">
