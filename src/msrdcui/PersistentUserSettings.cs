@@ -5,8 +5,10 @@ namespace rdclauncher
     internal static class PersistentUserSettings
     {
         private const int MaxHistoryLength = 10;
+
+        // Remote computer name history
+
         private const string RemoteComputerHistoryItemFormatString = "RemoteComputerHistoryItem{0:00}";
-        private const string RdcWindowTitleHistoryItemFormatString = "RdcWindowTitleHistoryItem{0:00}";
 
         public static IReadOnlyList<string> ReadRemoteComputerHistory()
         {
@@ -23,6 +25,10 @@ namespace rdclauncher
             ClearHistory(MaxHistoryLength, RemoteComputerHistoryItemFormatString);
         }
 
+        // MSRSC window title history
+
+        private const string RdcWindowTitleHistoryItemFormatString = "RdcWindowTitleHistoryItem{0:00}";
+
         public static IReadOnlyList<string> ReadRdcWindowTitleHistory()
         {
             return ReadHistory(MaxHistoryLength, RdcWindowTitleHistoryItemFormatString);
@@ -32,6 +38,13 @@ namespace rdclauncher
         {
             SaveHistory(latestRdcWindowTitle, currentRdcWindowTitleHistory, MaxHistoryLength, RdcWindowTitleHistoryItemFormatString);
         }
+
+        public static void ClearRdcWindowTitleHistory()
+        {
+            ClearHistory(MaxHistoryLength, RdcWindowTitleHistoryItemFormatString);
+        }
+
+        // Common
 
         private static IReadOnlyList<string> ReadHistory(int maxHistoryLength, string historyItemFormatString)
         {
