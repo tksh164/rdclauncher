@@ -5,8 +5,10 @@ namespace rdclauncher
     internal static class PersistentUserSettings
     {
         private const int MaxHistoryLength = 10;
+
+        // Remote computer name history
+
         private const string RemoteComputerHistoryItemFormatString = "RemoteComputerHistoryItem{0:00}";
-        private const string RdcWindowTitleHistoryItemFormatString = "RdcWindowTitleHistoryItem{0:00}";
 
         public static IReadOnlyList<string> ReadRemoteComputerHistory()
         {
@@ -18,6 +20,15 @@ namespace rdclauncher
             SaveHistory(latestRemoteComputer, currentRemoteComputerHistory, MaxHistoryLength, RemoteComputerHistoryItemFormatString);
         }
 
+        public static void ClearRemoteComputerHistory()
+        {
+            ClearHistory(MaxHistoryLength, RemoteComputerHistoryItemFormatString);
+        }
+
+        // MSRSC window title history
+
+        private const string RdcWindowTitleHistoryItemFormatString = "RdcWindowTitleHistoryItem{0:00}";
+
         public static IReadOnlyList<string> ReadRdcWindowTitleHistory()
         {
             return ReadHistory(MaxHistoryLength, RdcWindowTitleHistoryItemFormatString);
@@ -27,6 +38,13 @@ namespace rdclauncher
         {
             SaveHistory(latestRdcWindowTitle, currentRdcWindowTitleHistory, MaxHistoryLength, RdcWindowTitleHistoryItemFormatString);
         }
+
+        public static void ClearRdcWindowTitleHistory()
+        {
+            ClearHistory(MaxHistoryLength, RdcWindowTitleHistoryItemFormatString);
+        }
+
+        // Common
 
         private static IReadOnlyList<string> ReadHistory(int maxHistoryLength, string historyItemFormatString)
         {
@@ -74,6 +92,16 @@ namespace rdclauncher
             }
 
             return newHistory;
+        }
+
+        private static void ClearHistory(int maxHistoryLength, string historyItemFormatString)
+        {
+            for (int i = 0; i < maxHistoryLength; i++)
+            {
+                var propertyName = string.Format(historyItemFormatString, i + 1);
+                Properties.Settings.Default[propertyName] = string.Empty;
+            }
+            Properties.Settings.Default.Save();
         }
     }
 }

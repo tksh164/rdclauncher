@@ -10,11 +10,15 @@ namespace rdclauncher
     {
         public RelayCommand ConnectCommand { get; private set; }
         public RelayCommand OpenAboutThisAppUriCommand { get; private set; }
+        public RelayCommand ClearRemoteComputerHistoryCommand { get; private set; }
+        public RelayCommand ClearRdcWindowTitleHistoryCommand { get; private set; }
 
         public MainWindowViewModel()
         {
             ConnectCommand = new RelayCommand(ExecuteConnect, CanExecuteConnect);
             OpenAboutThisAppUriCommand = new RelayCommand(ExecuteOpenAboutThisAppUri);
+            ClearRemoteComputerHistoryCommand = new RelayCommand(ExecuteClearRemoteComputerHistory);
+            ClearRdcWindowTitleHistoryCommand = new RelayCommand(ExecuteClearRdcWindowTitleHistory);
             WindowTitle = WindowTitleBuilder.GetWindowTitle();
         }
 
@@ -159,6 +163,18 @@ namespace rdclauncher
         {
             const string AboutThisAppUri = "https://github.com/tksh164/rdclauncher";
             UriNavigator.Navigate(AboutThisAppUri);
+        }
+
+        private void ExecuteClearRemoteComputerHistory(object obj)
+        {
+            RemoteComputerHistory.Clear();
+            PersistentUserSettings.ClearRemoteComputerHistory();
+        }
+
+        private void ExecuteClearRdcWindowTitleHistory(object obj)
+        {
+            RdcWindowTitleHistory.Clear();
+            PersistentUserSettings.ClearRdcWindowTitleHistory();
         }
     }
 }
