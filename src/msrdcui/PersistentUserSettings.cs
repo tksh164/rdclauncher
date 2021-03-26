@@ -18,6 +18,11 @@ namespace rdclauncher
             SaveHistory(latestRemoteComputer, currentRemoteComputerHistory, MaxHistoryLength, RemoteComputerHistoryItemFormatString);
         }
 
+        public static void ClearRemoteComputerHistory()
+        {
+            ClearHistory(MaxHistoryLength, RemoteComputerHistoryItemFormatString);
+        }
+
         public static IReadOnlyList<string> ReadRdcWindowTitleHistory()
         {
             return ReadHistory(MaxHistoryLength, RdcWindowTitleHistoryItemFormatString);
@@ -74,6 +79,16 @@ namespace rdclauncher
             }
 
             return newHistory;
+        }
+
+        private static void ClearHistory(int maxHistoryLength, string historyItemFormatString)
+        {
+            for (int i = 0; i < maxHistoryLength; i++)
+            {
+                var propertyName = string.Format(historyItemFormatString, i + 1);
+                Properties.Settings.Default[propertyName] = string.Empty;
+            }
+            Properties.Settings.Default.Save();
         }
     }
 }

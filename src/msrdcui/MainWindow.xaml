@@ -53,7 +53,8 @@
         <Button Grid.Row="1" Grid.Column="2"
                 HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
-                BorderThickness="0" Background="Transparent">
+                BorderThickness="0" Background="Transparent"
+                Command="{Binding ClearRemoteComputerHistoryCommand}">
             <Image Source="{StaticResource DeleteIcon_Segoe_MDL2_Assets_e74d}" Width="16"/>
         </Button>
 
