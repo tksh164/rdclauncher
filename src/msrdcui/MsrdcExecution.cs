@@ -50,8 +50,8 @@ namespace rdclauncher
                 // The name or IP address of the remote computer that you want to connect to.
                 writer.WriteLine("full address:s:{0}:{1}", settings.RemoteComputer, settings.RemotePort);
 
-                // 0: RDP client will not prompt for credentials when connecting to a server that does not support server authentication.
-                // 1: RDP client will prompt for credentials when connecting to a server that does not support server authentication.
+                // 0: The RDP client will not prompt for credentials when connecting to a server that does not support server authentication.
+                // 1: The RDP client will prompt for credentials when connecting to a server that does not support server authentication.
                 writer.WriteLine("prompt for credentials:i:1");
 
                 // 0: When connecting to the remote computer, do not use the administrative session.
