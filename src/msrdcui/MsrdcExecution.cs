@@ -47,11 +47,27 @@ namespace rdclauncher
             using (var stream = new FileStream(tempRdpFilePath, FileMode.CreateNew, FileAccess.Write, FileShare.Read))
             using (var writer = new StreamWriter(stream, Encoding.UTF8))
             {
+                // The name or IP address of the remote computer that you want to connect to.
                 writer.WriteLine("full address:s:{0}:{1}", settings.RemoteComputer, settings.RemotePort);
+
+                // 0: RDP client will not prompt for credentials when connecting to a server that does not support server authentication.
+                // 1: RDP client will prompt for credentials when connecting to a server that does not support server authentication.
                 writer.WriteLine("prompt for credentials:i:1");
+
+                // 0: When connecting to the remote computer, do not use the administrative session.
+                // 1: When connecting to the remote computer, use the administrative session.
                 writer.WriteLine("administrative session:i:1");
+
+                // 0: The local window content won't scale when resized.
+                // 1: The local window content will scale when resized.
                 writer.WriteLine("smart sizing:i:{0}", settings.IsFitSessionToWindowEnabled ? "1" : "0");
+
+                // 0: Session resolution remains static for the duration of the session.
+                // 1: Session resolution updates as the local window resizes.
                 writer.WriteLine("dynamic resolution:i:{0}", settings.IsUpdateResolutionOnResizeEnabled ? "1" : "0");
+
+                // 1: The remote session will appear in a window.
+                // 2: The remote session will appear full screen.
                 writer.WriteLine("screen mode id:i:{0}", settings.IsFullScreenEnabled ? "2" : "1");
             }
             return tempRdpFilePath;
