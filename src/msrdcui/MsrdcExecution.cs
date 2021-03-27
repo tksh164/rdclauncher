@@ -22,14 +22,12 @@ namespace rdclauncher
         public static void LaunchMsrdc(MsrdcLaunchSettings settings)
         {
             var tempRdpFilePath = CreateTempRdpFile(settings);
-            var msrdcWindowTitle = GetMsrdcWindowTitle(settings.WindowTitle, settings.RemoteComputer, settings.RemotePort);
-
             try
             {
                 Process.Start(new ProcessStartInfo()
                 {
                     FileName = GetMsrdcExeFilePath(),
-                    Arguments = BuildMsrdcArguments(tempRdpFilePath, msrdcWindowTitle),
+                    Arguments = BuildMsrdcArguments(tempRdpFilePath),
                     UseShellExecute = false,
                     CreateNoWindow = true,
                 });
@@ -43,6 +41,7 @@ namespace rdclauncher
 
         private static string CreateTempRdpFile(MsrdcLaunchSettings settings)
         {
+            var msrdcWindowTitle = GetMsrdcWindowTitle(settings.WindowTitle, settings.RemoteComputer, settings.RemotePort);
             var tempRdpFilePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".rdp");
             using (var stream = new FileStream(tempRdpFilePath, FileMode.CreateNew, FileAccess.Write, FileShare.Read))
             using (var writer = new StreamWriter(stream, Encoding.UTF8))
@@ -57,6 +56,9 @@ namespace rdclauncher
                 // 0: When connecting to the remote computer, do not use the administrative session.
                 // 1: When connecting to the remote computer, use the administrative session.
                 writer.WriteLine("administrative session:i:1");
+
+                // The window title of the RDP client.
+                writer.WriteLine("remotedesktopname:s:{0}", msrdcWindowTitle);
 
                 // 0: The local window content won't scale when resized.
                 // 1: The local window content will scale when resized.
@@ -97,13 +99,12 @@ namespace rdclauncher
             throw new FileNotFoundException("msrdc.exe does not exists.");
         }
 
-        private static string BuildMsrdcArguments(string tempRdpFilePath, string windowTitle)
+        private static string BuildMsrdcArguments(string tempRdpFilePath)
         {
             var options = new List<string>
             {
                 WrapWithDoubleQuote(tempRdpFilePath),
                 string.Format("/p:{0}", Process.GetCurrentProcess().Id),
-                string.Format("/n:{0}", WrapWithDoubleQuote(windowTitle)),
             };
             return string.Join(" ", options);
         }
