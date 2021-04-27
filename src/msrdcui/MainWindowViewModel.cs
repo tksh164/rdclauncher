@@ -64,17 +64,11 @@ namespace rdclauncher
             set => SetProperty(ref _remoteComputerHistory, value);
         }
 
-        private string _portNumber = "";
-        public string PortNumber
+        private uint _defaultPortNumber = 3389;
+        public uint DefaultPortNumber
         {
-            get => _portNumber;
-            set
-            {
-                if (SetProperty(ref _portNumber, value))
-                {
-                    ConnectCommand.RaiseCanExecuteChanged();
-                }
-            }
+            get => _defaultPortNumber;
+            set => SetProperty(ref _defaultPortNumber, value);
         }
 
         private string _rdcWindowTitle = "";
@@ -134,8 +128,8 @@ namespace rdclauncher
                     MsrdcExecution.LaunchMsrdc(new MsrdcLaunchSettings()
                     {
                         RemoteComputer = RemoteComputer,
-                        RemotePort = uint.Parse(PortNumber),
                         WindowTitle = RdcWindowTitle,
+                        DefaultRemotePort = DefaultPortNumber,
                         IsFitSessionToWindowEnabled = IsFitSessionToWindowEnabled,
                         IsUpdateResolutionOnResizeEnabled = IsUpdateResolutionOnResizeEnabled,
                         IsFullScreenEnabled = IsFullScreenEnabled,

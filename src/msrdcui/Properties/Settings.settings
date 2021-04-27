@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="rdclauncher.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="PortNumber" Type="System.String" Scope="Application">
+    <Setting Name="DefaultPortNumber" Type="System.UInt32" Scope="Application">
       <Value Profile="(Default)">3389</Value>
     </Setting>
     <Setting Name="DefaultFitSessionToWindowEnabled" Type="System.Boolean" Scope="Application">

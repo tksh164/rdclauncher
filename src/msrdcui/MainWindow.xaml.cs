@@ -17,7 +17,7 @@ namespace rdclauncher
         {
             var vm = new MainWindowViewModel()
             {
-                PortNumber = Properties.Settings.Default.PortNumber,
+                DefaultPortNumber = Properties.Settings.Default.DefaultPortNumber,
                 IsFitSessionToWindowEnabled = Properties.Settings.Default.DefaultFitSessionToWindowEnabled,
                 IsUpdateResolutionOnResizeEnabled = Properties.Settings.Default.DefaultUpdateResolutionOnResizeEnabled,
                 IsFullScreenEnabled = Properties.Settings.Default.DefaultFullScreenEnabled,
