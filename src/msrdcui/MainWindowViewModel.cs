@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -108,7 +107,19 @@ namespace rdclauncher
 
         private bool CanExecuteConnect(object arg)
         {
-            return !string.IsNullOrWhiteSpace(RemoteComputer) && !RemoteComputer.Contains(' ') && uint.TryParse(PortNumber, out _);
+            if (string.IsNullOrWhiteSpace(RemoteComputer)) return false;
+            if (RemoteComputer.Contains(" ")) return false;
+
+            var portSeparatorPos = RemoteComputer.IndexOf(":");
+            if (portSeparatorPos >= 0)
+            {
+                if (portSeparatorPos == 0) return false;
+
+                var port = RemoteComputer.Substring(portSeparatorPos + 1);
+                return uint.TryParse(port, out _);
+            }
+
+            return true;
         }
 
         private async void ExecuteConnect(object obj)
