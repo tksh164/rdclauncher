@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}"
         Title="{Binding WindowTitle}"
-        Width="500" Height="310"
+        Width="500" Height="280"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
         FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}">
     <Window.Resources>
@@ -25,23 +25,22 @@
             <RowDefinition Height="34"/>
             <RowDefinition Height="34"/>
             <RowDefinition Height="34"/>
-            <RowDefinition Height="34"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
                    VerticalAlignment="Top"
-                   Text="Enter the remote computer name and remote port number. The others are optional."/>
+                   Text="Enter the remote computer. The others are optional."/>
 
         <Label Grid.Row="1" Grid.Column="0"
                HorizontalAlignment="Right" VerticalAlignment="Center"
-               Target="{Binding ElementName=RemoteComputer}" Content="_Computer:"/>
+               Target="{Binding ElementName=RemoteComputer}" Content="_Computer [:Port]"/>
         <ComboBox Name="RemoteComputer"
                   Grid.Row="1" Grid.Column="1"
                   VerticalAlignment="Center" Padding="4"
@@ -60,24 +59,15 @@
 
         <Label Grid.Row="2" Grid.Column="0"
                HorizontalAlignment="Right" VerticalAlignment="Center"
-               Target="{Binding ElementName=RemotePort}" Content="_Port:"/>
-        <TextBox Name="RemotePort"
-                 Grid.Row="2" Grid.Column="1"
-                 VerticalAlignment="Center" Padding="4"
-                 IsEnabled="{Binding IsInteractableElementsEnabled}"
-                 Text="{Binding PortNumber, UpdateSourceTrigger=PropertyChanged}"/>
-
-        <Label Grid.Row="3" Grid.Column="0"
-               HorizontalAlignment="Right" VerticalAlignment="Center"
-               Target="{Binding ElementName=WindowTitle}" Content="_Window title:"/>
+               Target="{Binding ElementName=WindowTitle}" Content="_Window title"/>
         <ComboBox Name="WindowTitle"
-                  Grid.Row="3" Grid.Column="1"
+                  Grid.Row="2" Grid.Column="1"
                   VerticalAlignment="Center" Padding="4"
                   IsEnabled="{Binding IsInteractableElementsEnabled}"
                   IsEditable="True"
                   ItemsSource="{Binding RdcWindowTitleHistory}"
                   Text="{Binding RdcWindowTitle}"/>
-        <Button Grid.Row="3" Grid.Column="2"
+        <Button Grid.Row="2" Grid.Column="2"
                 HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
@@ -85,7 +75,7 @@
             <Image Source="{StaticResource DeleteIcon_Segoe_MDL2_Assets_e74d}" Width="16"/>
         </Button>
 
-        <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+        <WrapPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
                    Orientation="Horizontal" VerticalAlignment="Center"
                    IsEnabled="{Binding IsInteractableElementsEnabled}">
             <CheckBox Margin="4,4,12,4" Content="Fit _session to window" IsChecked="{Binding IsFitSessionToWindowEnabled}"/>
@@ -93,12 +83,12 @@
             <CheckBox Margin="4,4,12,4" Content="_Full screen" IsChecked="{Binding IsFullScreenEnabled}"/>
         </WrapPanel>
         
-        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
             <Hyperlink IsEnabled="{Binding IsInteractableElementsEnabled}"
                        Command="{Binding OpenAboutThisAppUriCommand}">Learn more</Hyperlink>
         </TextBlock>
 
-        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12"
                 IsDefault="True" IsEnabled="{Binding IsInteractableElementsEnabled}"
                 Command="{Binding ConnectCommand}" Content="Connect"/>

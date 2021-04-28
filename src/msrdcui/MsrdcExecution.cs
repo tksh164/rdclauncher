@@ -10,8 +10,8 @@ namespace rdclauncher
     internal sealed class MsrdcLaunchSettings
     { 
         public string RemoteComputer { get; set; }
-        public uint RemotePort { get; set; }
         public string WindowTitle { get; set; }
+        public uint DefaultRemotePort { get; set; }
         public bool IsFitSessionToWindowEnabled { get; set; }
         public bool IsUpdateResolutionOnResizeEnabled { get; set; }
         public bool IsFullScreenEnabled { get; set; }
@@ -41,13 +41,14 @@ namespace rdclauncher
 
         private static string CreateTempRdpFile(MsrdcLaunchSettings settings)
         {
-            var msrdcWindowTitle = GetMsrdcWindowTitle(settings.WindowTitle, settings.RemoteComputer, settings.RemotePort);
+            var rdcDestination = GetRdcDestination(settings.RemoteComputer, settings.DefaultRemotePort);
+            var msrdcWindowTitle = GetMsrdcWindowTitle(settings.WindowTitle, rdcDestination);
             var tempRdpFilePath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".rdp");
             using (var stream = new FileStream(tempRdpFilePath, FileMode.CreateNew, FileAccess.Write, FileShare.Read))
             using (var writer = new StreamWriter(stream, Encoding.UTF8))
             {
                 // The name or IP address of the remote computer that you want to connect to.
-                writer.WriteLine("full address:s:{0}:{1}", settings.RemoteComputer, settings.RemotePort);
+                writer.WriteLine("full address:s:{0}", rdcDestination);
 
                 // 0: The RDP client will not prompt for credentials when connecting to a server that does not support server authentication.
                 // 1: The RDP client will prompt for credentials when connecting to a server that does not support server authentication.
@@ -75,15 +76,27 @@ namespace rdclauncher
             return tempRdpFilePath;
         }
 
-        private static string GetMsrdcWindowTitle(string windowTitle, string remoteComputer, uint port)
+        private static string GetRdcDestination(string remoteComputer, uint defaultRemotePort)
         {
-            if (string.IsNullOrEmpty(windowTitle))
+            if (remoteComputer.Contains(":"))
             {
-                return string.Format("{0}:{1}", remoteComputer, port);
+                return remoteComputer;
             }
             else
             {
-                return string.Format("{0} - {1}:{2}", windowTitle, remoteComputer, port);
+                return string.Format("{0}:{1}", remoteComputer, defaultRemotePort);
+            }
+        }
+
+        private static string GetMsrdcWindowTitle(string windowTitle, string rdcDestination)
+        {
+            if (string.IsNullOrEmpty(windowTitle))
+            {
+                return rdcDestination;
+            }
+            else
+            {
+                return string.Format("{0} - {1}", windowTitle, rdcDestination);
             }
         }
 
