@@ -184,8 +184,14 @@ namespace rdclauncher
 
         private void ExecuteClearRdcWindowTitleHistory(object obj)
         {
-            RdcWindowTitleHistory.Clear();
-            PersistentUserSettings.ClearRdcWindowTitleHistory();
+            const string windowTitleHistoryClearConfirmationMessageText = "Do you want to clear all window title in the history?" + "\n\n" +
+                "Click OK if you want to delete all window title in the history, otherwise click Cancel.";
+            var result = MessageBox.Show(windowTitleHistoryClearConfirmationMessageText, WindowTitle, MessageBoxButton.OKCancel, MessageBoxImage.Question, MessageBoxResult.Cancel);
+            if (result == MessageBoxResult.OK)
+            {
+                RdcWindowTitleHistory.Clear();
+                PersistentUserSettings.ClearRdcWindowTitleHistory();
+            }
         }
     }
 }
