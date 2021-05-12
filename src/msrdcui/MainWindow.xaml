@@ -43,6 +43,7 @@
                Target="{Binding ElementName=RemoteComputer}" Content="_Computer [:Port]"/>
         <ComboBox Name="RemoteComputer"
                   Grid.Row="1" Grid.Column="1"
+                  TabIndex="0"
                   VerticalAlignment="Center" Padding="4"
                   IsEnabled="{Binding IsInteractableElementsEnabled}"
                   IsEditable="True"
@@ -50,6 +51,7 @@
                   ItemsSource="{Binding RemoteComputerHistory}"
                   Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Grid.Row="1" Grid.Column="2"
+                TabIndex="6"
                 HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
@@ -62,12 +64,14 @@
                Target="{Binding ElementName=WindowTitle}" Content="_Window title"/>
         <ComboBox Name="WindowTitle"
                   Grid.Row="2" Grid.Column="1"
+                  TabIndex="1"
                   VerticalAlignment="Center" Padding="4"
                   IsEnabled="{Binding IsInteractableElementsEnabled}"
                   IsEditable="True"
                   ItemsSource="{Binding RdcWindowTitleHistory}"
                   Text="{Binding RdcWindowTitle}"/>
         <Button Grid.Row="2" Grid.Column="2"
+                TabIndex="7"
                 HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
@@ -78,9 +82,9 @@
         <WrapPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
                    Orientation="Horizontal" VerticalAlignment="Center"
                    IsEnabled="{Binding IsInteractableElementsEnabled}">
-            <CheckBox Margin="4,4,12,4" Content="Fit _session to window" IsChecked="{Binding IsFitSessionToWindowEnabled}"/>
-            <CheckBox Margin="4,4,12,4" Content="Update the _resolution on resize" IsChecked="{Binding IsUpdateResolutionOnResizeEnabled}"/>
-            <CheckBox Margin="4,4,12,4" Content="_Full screen" IsChecked="{Binding IsFullScreenEnabled}"/>
+            <CheckBox TabIndex="2" Margin="4,4,12,4" Content="Fit _session to window" IsChecked="{Binding IsFitSessionToWindowEnabled}"/>
+            <CheckBox TabIndex="3" Margin="4,4,12,4" Content="Update the _resolution on resize" IsChecked="{Binding IsUpdateResolutionOnResizeEnabled}"/>
+            <CheckBox TabIndex="4" Margin="4,4,12,4" Content="_Full screen" IsChecked="{Binding IsFullScreenEnabled}"/>
         </WrapPanel>
         
         <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
@@ -89,6 +93,7 @@
         </TextBlock>
 
         <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+                TabIndex="5"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12"
                 IsDefault="True" IsEnabled="{Binding IsInteractableElementsEnabled}"
                 Command="{Binding ConnectCommand}" Content="Connect"/>
