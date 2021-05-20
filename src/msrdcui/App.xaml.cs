@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace rdclauncher
 {
@@ -7,5 +8,18 @@ namespace rdclauncher
     /// </summary>
     public partial class App : Application
     {
+        public App() : base()
+        {
+            SetupUnhandledExceptionHandling();
+        }
+
+        private void SetupUnhandledExceptionHandling()
+        {
+            AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionHandler;
+        }
+
+        private static void UnhandledExceptionHandler(object sender, UnhandledExceptionEventArgs e)
+        {
+        }
     }
 }
