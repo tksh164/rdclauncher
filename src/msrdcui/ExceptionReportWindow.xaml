@@ -27,7 +27,7 @@
 
         <Button Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="30,12" IsCancel="True"
                 Command="{Binding CloseExceptionReportWindowCommand}" Content="Quit"/>
-        <Button Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12" Width="290" IsDefault="True"
+        <Button Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12" IsDefault="True"
                 Command="{Binding CopyExceptionReportToClipboardCommand}" Content="{Binding CopyButtonContentText}"/>
     </Grid>
 </Window>
