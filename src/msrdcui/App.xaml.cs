@@ -20,6 +20,8 @@ namespace rdclauncher
 
         private static void UnhandledExceptionHandler(object sender, UnhandledExceptionEventArgs e)
         {
+            var exceptionReportWindow = new ExceptionReportWindow(ExceptionReportBuilder.GetReportText(e.ExceptionObject as Exception));
+            exceptionReportWindow.ShowDialog();
         }
     }
 }
