@@ -61,7 +61,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ExceptionReportBuilder.cs" />
+    <Compile Include="ExceptionReportWindow.xaml.cs">
+      <DependentUpon>ExceptionReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionReportWindowViewModel.cs" />
     <Compile Include="WindowTitleBuilder.cs" />
+    <Page Include="ExceptionReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
