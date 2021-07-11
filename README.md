@@ -1,5 +1,7 @@
 # RDC Launcher
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/tksh164/rdclauncher)
+
 The RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc). You can leverage the benefit of the Remote Desktop client. e.g. Advanced display settings, window title naming.
 
 <img src="./media/screenshot01.png" width="60%" alt="Screenshot of the app.">
@@ -63,7 +65,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
 ## 🔨 Build from source
 
-You can build the project using Visual Studio 2019.
+You can build the project using [Visual Studio](https://visualstudio.microsoft.com/).
 
 ## ⚖ License
 
