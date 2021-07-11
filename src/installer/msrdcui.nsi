@@ -1,5 +1,6 @@
 Unicode true
 !include "MUI2.nsh"
+!include "FileFunc.nsh"
 
 #
 # Application information
@@ -55,7 +56,6 @@ Name "${APP_DISPLAY_NAME}"
 # Uninstall information
 #
 
-!define INSTALL_SIZE_KB 232
 !define PUBLISHER "Takeshi Katano"
 !define URL_INFO_ABOUT "https://github.com/tksh164/rdclauncher"
 !define URL_UPDATE_INFO "https://github.com/tksh164/rdclauncher/releases/latest"
@@ -108,10 +108,14 @@ Section "install"
     # Create a start menu item.
     CreateShortCut "$SMPROGRAMS\${APP_DISPLAY_NAME}.lnk" "$\"$INSTDIR\rdclauncher.exe$\""
 
+    # Get the installation size.
+    ${GetSize} "$INSTDIR" "/S=0K" $0 $1 $2
+    !define INSTALLATION_SIZE_KB $0
+
     # Write the uninstall information into the registry.
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayName" "${APP_DISPLAY_NAME}"
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayVersion" "${APP_VERSION}"
-    WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "EstimatedSize" ${INSTALL_SIZE_KB}
+    WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "EstimatedSize" ${INSTALLATION_SIZE_KB}
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "InstallLocation" "$\"$INSTDIR$\""
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "UninstallString" "$\"$INSTDIR\${UNINSTALLER_NAME}$\""
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "QuietUninstallString" "$\"$INSTDIR\${UNINSTALLER_NAME}$\" /S"
