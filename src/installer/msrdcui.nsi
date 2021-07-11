@@ -8,7 +8,9 @@ Unicode true
 !define APP_NAME "RDCLauncher"
 !define APP_NAME_LC "rdclauncher"
 !define APP_DISPLAY_NAME "RDC Launcher"
-!define APP_VERSION "0.5.0"
+!define APP_VERSION_MAJOR 0
+!define APP_VERSION_MINOR 5
+!define APP_VERSION "${APP_VERSION_MAJOR}.${APP_VERSION_MINOR}.0"
 !define APP_ICON "..\msrdcui\Resources\msrdcui0.ico"
 !define UNINSTALLER_NAME "uninstall.exe"
 
@@ -119,6 +121,8 @@ Section "install"
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "HelpLink" "${HELP_LINK}"
     WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "NoModify" 1
     WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "NoRepair" 1
+    WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "VersionMajor" ${APP_VERSION_MAJOR}
+    WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "VersionMinor" ${APP_VERSION_MINOR}
 
 SectionEnd
 
