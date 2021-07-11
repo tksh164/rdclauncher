@@ -141,6 +141,6 @@ Section "uninstall"
     # Delete the uninstall information from the registry.
     DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
 
-    # TODO: Delete the app settings file.
-
+    # Delete the app settings file.
+    RMDir /r /REBOOTOK "$LOCALAPPDATA\rdclauncher"
 SectionEnd
