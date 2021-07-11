@@ -152,4 +152,5 @@ Section "uninstall"
 
     # Delete the app settings file.
     RMDir /r /REBOOTOK "$LOCALAPPDATA\rdclauncher"
+
 SectionEnd
