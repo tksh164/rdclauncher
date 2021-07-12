@@ -13,7 +13,8 @@ Unicode true
 !define APP_VERSION_MINOR 5
 !define APP_VERSION "${APP_VERSION_MAJOR}.${APP_VERSION_MINOR}.0"
 !define APP_ICON "..\msrdcui\Resources\msrdcui0.ico"
-!define UNINSTALLER_NAME "uninstall.exe"
+!define APP_EXE_FILE_NAME "rdclauncher.exe"
+!define UNINSTALLER_EXE_FILE_NAME "uninstall.exe"
 
 #
 # General
@@ -98,15 +99,15 @@ Section "install"
 
     # Deploy the application files into the install path.
     SetOutPath "$INSTDIR"
-    File "..\msrdcui\bin\Release\rdclauncher.exe"
-    File "..\msrdcui\bin\Release\rdclauncher.exe.config"
+    File "..\msrdcui\bin\Release\${APP_EXE_FILE_NAME}"
+    File "..\msrdcui\bin\Release\${APP_EXE_FILE_NAME}.config"
     File "..\msrdcui\bin\Release\rdclauncher.pdb"
 
     # Create an uninstaller in the install path.
-    WriteUninstaller "$INSTDIR\${UNINSTALLER_NAME}"
+    WriteUninstaller "$INSTDIR\${UNINSTALLER_EXE_FILE_NAME}"
 
     # Create a start menu item.
-    CreateShortCut "$SMPROGRAMS\${APP_DISPLAY_NAME}.lnk" "$\"$INSTDIR\rdclauncher.exe$\""
+    CreateShortCut "$SMPROGRAMS\${APP_DISPLAY_NAME}.lnk" "$\"$INSTDIR\${APP_EXE_FILE_NAME}$\""
 
     # Get the installation size.
     ${GetSize} "$INSTDIR" "/S=0K" $0 $1 $2
@@ -115,11 +116,11 @@ Section "install"
     # Write the uninstall information into the registry.
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayName" "${APP_DISPLAY_NAME}"
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayVersion" "${APP_VERSION}"
-    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayIcon" "$\"$INSTDIR\rdclauncher.exe$\""
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayIcon" "$\"$INSTDIR\${APP_EXE_FILE_NAME}$\""
     WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "EstimatedSize" ${INSTALLATION_SIZE_KB}
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "InstallLocation" "$\"$INSTDIR$\""
-    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "UninstallString" "$\"$INSTDIR\${UNINSTALLER_NAME}$\""
-    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "QuietUninstallString" "$\"$INSTDIR\${UNINSTALLER_NAME}$\" /S"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "UninstallString" "$\"$INSTDIR\${UNINSTALLER_EXE_FILE_NAME}$\""
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "QuietUninstallString" "$\"$INSTDIR\${UNINSTALLER_EXE_FILE_NAME}$\" /S"
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "Publisher" "${PUBLISHER}"
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "URLInfoAbout" "${URL_INFO_ABOUT}"
     WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "URLUpdateInfo" "${URL_UPDATE_INFO}"
@@ -134,12 +135,12 @@ SectionEnd
 Section "uninstall"
 
     # Delete the installed applicaton files.
-    Delete "$INSTDIR\rdclauncher.exe"
-    Delete "$INSTDIR\rdclauncher.exe.config"
+    Delete "$INSTDIR\${APP_EXE_FILE_NAME}"
+    Delete "$INSTDIR\${APP_EXE_FILE_NAME}.config"
     Delete "$INSTDIR\rdclauncher.pdb"
 
     # Delete the uninstaller.
-    Delete "$INSTDIR\${UNINSTALLER_NAME}"
+    Delete "$INSTDIR\${UNINSTALLER_EXE_FILE_NAME}"
 
     # Try to delete the install directory.
     RMDir "$INSTDIR"
