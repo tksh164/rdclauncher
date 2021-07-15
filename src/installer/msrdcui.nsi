@@ -67,7 +67,7 @@ Name "${APP_DISPLAY_NAME}"
 #
 
 !define MUI_LICENSEPAGE_CHECKBOX
-!insertmacro MUI_PAGE_LICENSE "${NSISDIR}\Docs\Modern UI\License.txt"
+!insertmacro MUI_PAGE_LICENSE "..\..\LICENSE"
 
 !insertmacro MUI_PAGE_INSTFILES
 
