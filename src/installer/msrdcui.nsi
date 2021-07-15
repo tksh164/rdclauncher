@@ -29,6 +29,9 @@ InstallDir "$APPDATA\${APP_NAME}"
 # Requested execution privileges for the installation.
 RequestExecutionLevel user
 
+# Enable DPI-aware
+ManifestDPIAware true
+
 #
 # Installer's version infomation
 #
