@@ -102,6 +102,7 @@ Section "install"
     File "..\msrdcui\bin\Release\${APP_EXE_FILE_NAME}"
     File "..\msrdcui\bin\Release\${APP_EXE_FILE_NAME}.config"
     File "..\msrdcui\bin\Release\rdclauncher.pdb"
+    File "..\..\LICENSE"
 
     # Create an uninstaller in the install path.
     WriteUninstaller "$INSTDIR\${UNINSTALLER_EXE_FILE_NAME}"
