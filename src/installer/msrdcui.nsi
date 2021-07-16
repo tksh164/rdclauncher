@@ -199,6 +199,7 @@ Section "uninstall"
     Delete "$INSTDIR\${APP_EXE_FILE_NAME}"
     Delete "$INSTDIR\${APP_EXE_FILE_NAME}.config"
     Delete "$INSTDIR\rdclauncher.pdb"
+    Delete "$INSTDIR\LICENSE"
 
     # Delete the uninstaller.
     Delete "$INSTDIR\${UNINSTALLER_EXE_FILE_NAME}"
