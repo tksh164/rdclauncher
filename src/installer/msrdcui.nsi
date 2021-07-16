@@ -213,7 +213,7 @@ Function "MsrdcDownloadPageCreator"
         Abort  # Skip this page if the Remote Desktop client already installed.
     ${EndIf}
 
-    !insertmacro MUI_HEADER_TEXT "Remote Desktop client for Windows Desktop" "Download the Remote Desktop client for Windows Desktop."
+    !insertmacro MUI_HEADER_TEXT "Remote Desktop client for Windows Desktop" "Download and install the Remote Desktop client for Windows Desktop."
 
     nsDialogs::Create 1018
     Pop $Dialog
