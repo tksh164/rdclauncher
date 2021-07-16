@@ -18,6 +18,27 @@ Unicode true
 !define UNINSTALLER_EXE_FILE_NAME "uninstall.exe"
 
 #
+# Installer's version infomation
+#
+
+VIProductVersion "${APP_VERSION}.0"
+VIFileVersion "${APP_VERSION}.0"
+VIAddVersionKey /LANG=0 "ProductName" "${APP_DISPLAY_NAME}"
+VIAddVersionKey /LANG=0 "ProductVersion" "${APP_VERSION}"
+VIAddVersionKey /LANG=0 "FileVersion" "${APP_VERSION}"
+VIAddVersionKey /LANG=0 "FileDescription" "The RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc)."
+VIAddVersionKey /LANG=0 "LegalCopyright" "Copyright (c) 2021-present Takeshi Katano. All rights reserved."
+
+#
+# Uninstall information
+#
+
+!define PUBLISHER "Takeshi Katano"
+!define URL_INFO_ABOUT "https://github.com/tksh164/rdclauncher"
+!define URL_UPDATE_INFO "https://github.com/tksh164/rdclauncher/releases/latest"
+!define HELP_LINK "https://github.com/tksh164/rdclauncher"
+
+#
 # General
 #
 
@@ -51,22 +72,8 @@ ShowUninstDetails show
 ManifestDPIAware true
 
 #
-# Installer's version infomation
-#
-
-VIProductVersion "${APP_VERSION}.0"
-VIFileVersion "${APP_VERSION}.0"
-VIAddVersionKey /LANG=0 "ProductName" "${APP_DISPLAY_NAME}"
-VIAddVersionKey /LANG=0 "ProductVersion" "${APP_VERSION}"
-VIAddVersionKey /LANG=0 "FileVersion" "${APP_VERSION}"
-VIAddVersionKey /LANG=0 "FileDescription" "The RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc)."
-VIAddVersionKey /LANG=0 "LegalCopyright" "Copyright (c) 2021-present Takeshi Katano. All rights reserved."
-
-#
 # Modern UI
 #
-
-!define MUI_ABORTWARNING
 
 # Application name.
 Name "${APP_DISPLAY_NAME}"
@@ -75,14 +82,8 @@ Name "${APP_DISPLAY_NAME}"
 !define MUI_ICON "${APP_ICON}"
 !define MUI_UNICON "${APP_ICON}"
 
-#
-# Uninstall information
-#
-
-!define PUBLISHER "Takeshi Katano"
-!define URL_INFO_ABOUT "https://github.com/tksh164/rdclauncher"
-!define URL_UPDATE_INFO "https://github.com/tksh164/rdclauncher/releases/latest"
-!define HELP_LINK "https://github.com/tksh164/rdclauncher"
+# Show a warning message when the user cancel installation.
+!define MUI_ABORTWARNING
 
 #
 # Installer pages
