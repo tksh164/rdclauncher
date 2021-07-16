@@ -217,7 +217,7 @@ Function "MsrdcDownloadPageCreator"
 
     ${NSD_CreateLink} 0 36u 100% 12u "Click to open the download page of the Remote Desktop client in your browser."
     Pop $MsrdcLink
-    CreateFont $1 "Tahoma" 8 500 /UNDERLINE
+    CreateFont $1 "$(^Font)" $(^FontSize) 500 /UNDERLINE
     SendMessage $MsrdcLink ${WM_SETFONT} $1 1
     ${NSD_OnClick} $MsrdcLink "onDownloadMsrdcLinkClick"
 
