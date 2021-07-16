@@ -54,8 +54,9 @@ VIAddVersionKey /LANG=0 "LegalCopyright" "Copyright (c) 2021-present Takeshi Kat
 # Application name.
 Name "${APP_DISPLAY_NAME}"
 
-# Installer icon.
+# Installer/Uninstaller icon.
 !define MUI_ICON "${APP_ICON}"
+!define MUI_UNICON "${APP_ICON}"
 
 #
 # Uninstall information
