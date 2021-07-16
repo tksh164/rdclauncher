@@ -30,6 +30,23 @@ InstallDir "$APPDATA\${APP_NAME}"
 # Requested execution privileges for the installation.
 RequestExecutionLevel user
 
+# Compression settings
+SetCompress auto
+SetCompressor zlib
+
+# Saving the date and time of files.
+SetDateSave on
+
+# Overwrite any existing files.
+SetOverwrite on
+
+# Set the installer font.
+SetFont /LANG=${LANG_ENGLISH} "Segoe UI" 10
+
+# Show details
+ShowInstDetails show
+ShowUninstDetails show
+
 # Enable DPI-aware
 ManifestDPIAware true
 
