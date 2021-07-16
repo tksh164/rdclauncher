@@ -163,6 +163,7 @@ Section "install"
     File "..\msrdcui\bin\Release\${APP_EXE_FILE_NAME}.config"
     File "..\msrdcui\bin\Release\rdclauncher.pdb"
     File "..\..\LICENSE"
+    File "..\..\ThirdPartyNotices.txt"
 
     # Create an uninstaller in the install path.
     WriteUninstaller "$INSTDIR\${UNINSTALLER_EXE_FILE_NAME}"
@@ -200,6 +201,7 @@ Section "uninstall"
     Delete "$INSTDIR\${APP_EXE_FILE_NAME}.config"
     Delete "$INSTDIR\rdclauncher.pdb"
     Delete "$INSTDIR\LICENSE"
+    Delete "$INSTDIR\ThirdPartyNotices.txt"
 
     # Delete the uninstaller.
     Delete "$INSTDIR\${UNINSTALLER_EXE_FILE_NAME}"
