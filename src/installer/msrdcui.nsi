@@ -121,6 +121,17 @@ Page custom MsrdcDownloadPageCreator
 
 Section "install"
 
+    # Verify the previous installation existence.
+    ${If} ${RunningX64}
+        SetRegView 64
+    ${EndIf}
+    ClearErrors
+    ReadRegStr $0 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "QuietUninstallString"
+    ${IfNot} $0 != ""
+        DetailPrint "The previous installation found. Uninstall the previous installation before this installation."
+        ExecWait $0
+    ${EndIf}
+
     # Deploy the application files into the install path.
     SetOutPath "$INSTDIR"
     File "..\msrdcui\bin\Release\${APP_EXE_FILE_NAME}"
