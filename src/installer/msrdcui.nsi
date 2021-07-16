@@ -12,7 +12,8 @@ Unicode true
 !define APP_DISPLAY_NAME "RDC Launcher"
 !define APP_VERSION_MAJOR 0
 !define APP_VERSION_MINOR 5
-!define APP_VERSION "${APP_VERSION_MAJOR}.${APP_VERSION_MINOR}.0"
+!define APP_VERSION_PATCH 0
+!define APP_VERSION "${APP_VERSION_MAJOR}.${APP_VERSION_MINOR}.${APP_VERSION_PATCH}"
 !define APP_ICON "..\msrdcui\Resources\msrdcui0.ico"
 !define APP_EXE_FILE_NAME "rdclauncher.exe"
 !define UNINSTALLER_EXE_FILE_NAME "uninstall.exe"
