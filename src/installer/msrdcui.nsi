@@ -98,60 +98,6 @@ Page custom MsrdcDownloadPageCreator
 !insertmacro MUI_LANGUAGE "English"
 
 #
-# The Remote Desktop client download page
-#
-
-Var Dialog
-Var MsrdcLink
-Function "MsrdcDownloadPageCreator"
-
-    # Verify the installation of the Remote Desktop client.
-    ${If} ${RunningX64}
-        SetRegView 64
-    ${EndIf}
-    ClearErrors
-    ReadRegStr $0 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\{017C228A-33BE-45BC-9651-DF83C2EE53F8}" "InstallLocation"
-    ${IfNot} ${Errors}
-        Abort  # Skip this page if the Remote Desktop client already installed.
-    ${EndIf}
-
-    !insertmacro MUI_HEADER_TEXT "Remote Desktop client for Windows Desktop" "Download the Remote Desktop client for Windows Desktop."
-
-    nsDialogs::Create 1018
-    Pop $Dialog
-    ${If} $Dialog == error
-        Abort
-    ${EndIf}
-
-    ${NSD_CreateLabel} 0 0 100% 12u "This application requires the Remote Desktop client for Windows Desktop installation."
-    Pop $0
-    ${NSD_CreateLabel} 0 12u 100% 12u "Do you want to download the Remote Desktop client now? You can download it later also."
-    Pop $0
-
-    ${NSD_CreateLink} 0 36u 100% 12u "Click to open the download page of the Remote Desktop client in your browser."
-    Pop $MsrdcLink
-    CreateFont $1 "Tahoma" 8 500 /UNDERLINE
-    SendMessage $MsrdcLink ${WM_SETFONT} $1 1
-    ${NSD_OnClick} $MsrdcLink "onDownloadMsrdcLinkClick"
-
-    ${If} ${RunningX64}
-        ${NSD_CreateLabel} 0 48u 100% 12u "Then download the $\"Windows 64-bit$\" file from the page and install it."
-        Pop $0
-    ${Else}
-        ${NSD_CreateLabel} 0 48u 100% 12u "Then download the $\"Windows 32-bit$\" file from the page and install it."
-        Pop $0
-    ${EndIf}
-
-    nsDialogs::Show
-
-FunctionEnd
-
-Function "onDownloadMsrdcLinkClick"
-    Pop $0
-    ExecShell "open" "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop"
-FunctionEnd
-
-#
 # Sections
 #
 
@@ -219,3 +165,57 @@ Section "uninstall"
     RMDir /r /REBOOTOK "$LOCALAPPDATA\rdclauncher"
 
 SectionEnd
+
+#
+# The Remote Desktop client download page
+#
+
+Var Dialog
+Var MsrdcLink
+Function "MsrdcDownloadPageCreator"
+
+    # Verify the installation of the Remote Desktop client.
+    ${If} ${RunningX64}
+        SetRegView 64
+    ${EndIf}
+    ClearErrors
+    ReadRegStr $0 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\{017C228A-33BE-45BC-9651-DF83C2EE53F8}" "InstallLocation"
+    ${IfNot} ${Errors}
+        Abort  # Skip this page if the Remote Desktop client already installed.
+    ${EndIf}
+
+    !insertmacro MUI_HEADER_TEXT "Remote Desktop client for Windows Desktop" "Download the Remote Desktop client for Windows Desktop."
+
+    nsDialogs::Create 1018
+    Pop $Dialog
+    ${If} $Dialog == error
+        Abort
+    ${EndIf}
+
+    ${NSD_CreateLabel} 0 0 100% 12u "This application requires the Remote Desktop client for Windows Desktop installation."
+    Pop $0
+    ${NSD_CreateLabel} 0 12u 100% 12u "Do you want to download the Remote Desktop client now? You can download it later also."
+    Pop $0
+
+    ${NSD_CreateLink} 0 36u 100% 12u "Click to open the download page of the Remote Desktop client in your browser."
+    Pop $MsrdcLink
+    CreateFont $1 "Tahoma" 8 500 /UNDERLINE
+    SendMessage $MsrdcLink ${WM_SETFONT} $1 1
+    ${NSD_OnClick} $MsrdcLink "onDownloadMsrdcLinkClick"
+
+    ${If} ${RunningX64}
+        ${NSD_CreateLabel} 0 48u 100% 12u "Then download the $\"Windows 64-bit$\" file from the page and install it."
+        Pop $0
+    ${Else}
+        ${NSD_CreateLabel} 0 48u 100% 12u "Then download the $\"Windows 32-bit$\" file from the page and install it."
+        Pop $0
+    ${EndIf}
+
+    nsDialogs::Show
+
+FunctionEnd
+
+Function "onDownloadMsrdcLinkClick"
+    Pop $0
+    ExecShell "open" "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop"
+FunctionEnd
