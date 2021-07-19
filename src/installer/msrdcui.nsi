@@ -129,10 +129,11 @@ Section "install"
         SetRegView 64
     ${EndIf}
     ClearErrors
-    ReadRegStr $0 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_GUID}" "QuietUninstallString"
-    ${IfNot} $0 != ""
+    ReadRegStr $0 HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_GUID}" "QuietUninstallString"
+    ${IfNot} ${Errors}
+    ${AndIf} $0 != ""
         DetailPrint "The previous installation found. Uninstall the previous installation before this installation."
-        ExecWait $0
+        ExecWait "$0 _?=$INSTDIR"
     ${EndIf}
 
     # Deploy the application files into the install path.
