@@ -224,9 +224,7 @@ Function "MsrdcDownloadPageCreator"
         Abort
     ${EndIf}
 
-    ${NSD_CreateLabel} 0 0 100% 12u "This application requires the Remote Desktop client for Windows Desktop installation."
-    Pop $0
-    ${NSD_CreateLabel} 0 12u 100% 12u "Do you want to download the Remote Desktop client now? You can download it later also."
+    ${NSD_CreateLabel} 0 0 100% 24u "This application requires the Remote Desktop client for Windows Desktop installation.$\nDo you want to download the Remote Desktop client now? You can download it later also."
     Pop $0
 
     ${NSD_CreateLink} 0 36u 100% 12u "Click to open the download page of the Remote Desktop client in your browser."
