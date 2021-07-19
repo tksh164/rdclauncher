@@ -208,13 +208,18 @@ Var MsrdcLink
 Function "MsrdcDownloadPageCreator"
 
     # Verify the installation of the Remote Desktop client.
-    ${If} ${RunningX64}
-        SetRegView 64
-    ${EndIf}
-    ClearErrors
-    ReadRegStr $0 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\{017C228A-33BE-45BC-9651-DF83C2EE53F8}" "InstallLocation"
-    ${IfNot} ${Errors}
+    # NOTE: The uninstall registry key is not use for the Remote Desktop client existence verification because the GUID of the registry key is deferent for each machine.
+    ${If} ${FileExists} "$LOCALAPPDATA\Apps\Remote Desktop\msrdc.exe"  # For user install x64/x86
         Abort  # Skip this page if the Remote Desktop client already installed.
+    ${EndIf}
+    ${If} ${RunningX64}
+        ${If} ${FileExists} "$PROGRAMFILES64\Remote Desktop\msrdc.exe"  # For machine install x64
+            Abort  # Skip this page if the Remote Desktop client already installed.
+        ${EndIf}
+    ${Else}
+        ${If} ${FileExists} "$PROGRAMFILES\Remote Desktop\msrdc.exe"  # For machine install x86
+            Abort  # Skip this page if the Remote Desktop client already installed.
+        ${EndIf}
     ${EndIf}
 
     !insertmacro MUI_HEADER_TEXT "Remote Desktop client for Windows Desktop" "Download and install the Remote Desktop client for Windows Desktop."
