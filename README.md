@@ -1,5 +1,7 @@
 # RDC Launcher
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/tksh164/rdclauncher)
+
 The RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc). You can leverage the benefit of the Remote Desktop client. e.g. Advanced display settings, window title naming.
 
 <img src="./media/screenshot01.png" width="60%" alt="Screenshot of the app.">
@@ -11,8 +13,8 @@ The RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Rem
 - Windows 10
 - .NET Framework 4.7.2 or 4.8
   - Windows 10 has the .NET Framework 4.7.2 by default.
-- [Remote Desktop client](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop)
-  - You can download the Remote Desktop client installer from here.
+- Remote Desktop client (MSRDC)
+  - You can download the Remote Desktop client installer from the [Microsoft's web page](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop). Download it from the **Windows 64-bit** link if you use 64-bit Windows, also download it from the **Windows 32-bit** link if you use 32-bit Windows.
 
 ## 📥 Install
 
@@ -63,7 +65,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
 ## 🔨 Build from source
 
-You can build the project using Visual Studio 2019.
+You can build the project using [Visual Studio](https://visualstudio.microsoft.com/).
 
 ## ⚖ License
 
