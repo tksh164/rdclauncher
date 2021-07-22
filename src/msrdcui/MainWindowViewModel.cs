@@ -149,10 +149,10 @@ namespace rdclauncher
             }
             catch (FileNotFoundException)
             {
-                const string MsrdcExeNotFoundMessageText = "Couldn't found the Remote Desktop client for Windows Desktop (msrdc.exe) on this system. " +
-                    "This application requires the Remote Desktop client installation." + "\n\n" +
-                    "Do you want to download the Remote Desktop client? " +
-                    "Click Yes if you want to open the download page of the Remote Desktop client installer, otherwise click No.";
+                const string MsrdcExeNotFoundMessageText = "Couldn't found the Windows Desktop client (msrdc.exe) on this system. " +
+                    "This application requires the Windows Desktop client installation." + "\n\n" +
+                    "Do you want to download the Windows Desktop client? " +
+                    "Click Yes if you want to open the Windows Desktop client installer download page, otherwise click No.";
                 var result = MessageBox.Show(MsrdcExeNotFoundMessageText, WindowTitle, MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.Yes);
                 if (result == MessageBoxResult.Yes)
                 {
