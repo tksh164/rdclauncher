@@ -1,4 +1,9 @@
-# RDC Launcher
+<br />
+
+<h1 align="center">Remote Desktop Client Launcher</h1>
+<p align="center">The RDC Launcher allows to use the MSRDC as like the MSTSC.</p>
+
+<br /><br />
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/tksh164/rdclauncher)
 
