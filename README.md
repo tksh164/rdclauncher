@@ -24,7 +24,7 @@ The RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Rem
 
 1. Download [the zip file](https://github.com/tksh164/rdclauncher/releases/latest).
     - After the download the zip file, you can unblock the zip file from the file's property or using [Unblock-File](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file) cmdlet.
-2. Extract to files from the zip file. You can extract files from the `Extract All...` context menu in the File Explorer or using [Expand-Archive](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive) cmdlet.
+2. Extract to files from the zip file. You can extract files from the **Extract All...** context menu in the File Explorer or using [Expand-Archive](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive) cmdlet.
 3. Locate to the extracted files to anywhere you like.
 
 If you don't need this app anymore, you can uninstall it by delete the located folder.
@@ -41,7 +41,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
     </setting>
     ```
 
-  - `DefaultFitSessionToWindowEnabled`: If set True, the `Fit session to window` checkbox is checked by default.
+  - `DefaultFitSessionToWindowEnabled`: If set `True`, the **Fit session to window** checkbox is checked by default.
 
     ```
     <setting name="DefaultFitSessionToWindowEnabled" serializeAs="String">
@@ -49,7 +49,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
     </setting>
     ```
 
-  - `DefaultUpdateResolutionOnResizeEnabled`: If set True, the `Update resolution on resize` checkbox is checked by default.
+  - `DefaultUpdateResolutionOnResizeEnabled`: If set `True`, the **Update resolution on resize** checkbox is checked by default.
 
     ```
     <setting name="DefaultUpdateResolutionOnResizeEnabled" serializeAs="String">
@@ -57,7 +57,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
     </setting>
     ```
 
-  - `DefaultFullScreenEnabled`: If set True, the `Full screen` checkbox is checked by default.
+  - `DefaultFullScreenEnabled`: If set `True`, the **Full screen** checkbox is checked by default.
 
     ```
     <setting name="DefaultFullScreenEnabled" serializeAs="String">
