@@ -66,6 +66,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
     ```
 
 - The history file located at `%LocalAppData%\rdclauncher\rdclauncher.exe_Url_<random-string>\<version>\user.config`. Delete this file if you want to delete the history.
+- The RDC launcher launch at the center of screen of the mouse cursor located on.
 
 ## 🔨 Build from source
 
