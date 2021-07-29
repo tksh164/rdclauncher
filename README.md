@@ -31,6 +31,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
 ## 💡 Tips
 
+- The RDC launcher launch at the center of screen of the mouse cursor located on.
 - You can change the default settings of this app by edit the `rdclauncher.exe.config` that placed in the same place as the application's executable file (`rdclauncher.exe`).
 
   - `PortNumber`: The default port number.
@@ -66,7 +67,6 @@ If you don't need this app anymore, you can uninstall it by delete the located f
     ```
 
 - The history file located at `%LocalAppData%\rdclauncher\rdclauncher.exe_Url_<random-string>\<version>\user.config`. Delete this file if you want to delete the history.
-- The RDC launcher launch at the center of screen of the mouse cursor located on.
 
 ## 🔨 Build from source
 
