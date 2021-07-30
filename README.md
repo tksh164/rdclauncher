@@ -1,5 +1,7 @@
 <br />
 
+<p align="center"><img src="./media/rdclauncher.png" width="10%" alt="RDC Launcher app icon."></p>
+
 <h1 align="center">Remote Desktop Client Launcher</h1>
 <p align="center">The RDC Launcher allows to use the MSRDC as like the MSTSC.</p>
 
