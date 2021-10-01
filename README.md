@@ -40,7 +40,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
   - `PortNumber`: The default port number.
 
-    ```
+    ```xml
     <setting name="PortNumber" serializeAs="String">
         <value>3389</value>
     </setting>
@@ -48,7 +48,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
   - `DefaultFitSessionToWindowEnabled`: If set `True`, the **Fit session to window** checkbox is checked by default.
 
-    ```
+    ```xml
     <setting name="DefaultFitSessionToWindowEnabled" serializeAs="String">
         <value>False</value>
     </setting>
@@ -56,7 +56,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
   - `DefaultUpdateResolutionOnResizeEnabled`: If set `True`, the **Update resolution on resize** checkbox is checked by default.
 
-    ```
+    ```xml
     <setting name="DefaultUpdateResolutionOnResizeEnabled" serializeAs="String">
         <value>True</value>
     </setting>
@@ -64,7 +64,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
   - `DefaultFullScreenEnabled`: If set `True`, the **Full screen** checkbox is checked by default.
 
-    ```
+    ```xml
     <setting name="DefaultFullScreenEnabled" serializeAs="String">
         <value>False</value>
     </setting>
