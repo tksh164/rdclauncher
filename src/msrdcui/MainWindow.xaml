@@ -36,7 +36,7 @@
 
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
                    VerticalAlignment="Top"
-                   Text="Enter the remote computer. The others are optional."/>
+                   Text="Enter the remote computer. All others are optional."/>
 
         <Label Grid.Row="1" Grid.Column="0"
                HorizontalAlignment="Right" VerticalAlignment="Center"
