@@ -9,7 +9,7 @@
         Title="{Binding WindowTitle}"
         Width="500" Height="280"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
-        FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}">
+        FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}" FontSize="13">
     <Window.Resources>
         <DrawingImage x:Key="DeleteIcon_Segoe_MDL2_Assets_e74d">
             <DrawingImage.Drawing>
