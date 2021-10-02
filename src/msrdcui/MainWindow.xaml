@@ -42,11 +42,11 @@
                   Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Grid.Row="1" Grid.Column="2"
                 TabIndex="6"
-                HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Padding="2"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
                 Command="{Binding ClearRemoteComputerHistoryCommand}">
-            <Image Source="{StaticResource DeleteIcon_Segoe_MDL2_Assets_e74d}" Width="16"/>
+            <Image Source="{StaticResource Delete_SegoeFluentIcons_Regular}" Width="24"/>
         </Button>
 
         <Label Grid.Row="2" Grid.Column="0"
@@ -62,11 +62,11 @@
                   Text="{Binding RdcWindowTitle}"/>
         <Button Grid.Row="2" Grid.Column="2"
                 TabIndex="7"
-                HorizontalAlignment="Right" VerticalAlignment="Center" Padding="5"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Padding="2"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
                 Command="{Binding ClearRdcWindowTitleHistoryCommand}">
-            <Image Source="{StaticResource DeleteIcon_Segoe_MDL2_Assets_e74d}" Width="16"/>
+            <Image Source="{StaticResource Delete_SegoeFluentIcons_Regular}" Width="24"/>
         </Button>
 
         <WrapPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
