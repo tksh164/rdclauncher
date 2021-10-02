@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}"
         Title="{Binding WindowTitle}"
-        Width="500" Height="280"
+        Width="520" Height="280"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
         FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}" FontSize="13">
     <Window.Resources>
