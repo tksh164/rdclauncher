@@ -67,6 +67,10 @@
     </Compile>
     <Compile Include="ExceptionReportWindowViewModel.cs" />
     <Compile Include="WindowTitleBuilder.cs" />
+    <Page Include="AppDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ExceptionReportWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
