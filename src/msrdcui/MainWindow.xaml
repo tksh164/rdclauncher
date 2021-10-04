@@ -46,7 +46,7 @@
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
                 Command="{Binding ClearRemoteComputerHistoryCommand}">
-            <Image Source="{StaticResource Delete_SegoeFluentIcons_Regular}" Width="24"/>
+            <Image Source="{StaticResource Delete_SegoeFluentIcons}" Width="24"/>
         </Button>
 
         <Label Grid.Row="2" Grid.Column="0"
@@ -66,7 +66,7 @@
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
                 Command="{Binding ClearRdcWindowTitleHistoryCommand}">
-            <Image Source="{StaticResource Delete_SegoeFluentIcons_Regular}" Width="24"/>
+            <Image Source="{StaticResource Delete_SegoeFluentIcons}" Width="24"/>
         </Button>
 
         <WrapPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
