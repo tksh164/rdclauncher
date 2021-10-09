@@ -9,7 +9,8 @@
         Title="{Binding WindowTitle}"
         Width="520" Height="280"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
-        FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}" FontSize="13">
+        FontSize="13"
+        FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}">
     <Grid Margin="16">
         <Grid.RowDefinitions>
             <RowDefinition Height="34"/>
