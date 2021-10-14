@@ -5,25 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rdclauncher"
         mc:Ignorable="d"
-        Title="Delete History"
-        Height="180" Width="380"
+        Title="Clear History"
+        Height="180" Width="350"
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
         FontSize="13">
     <Grid Margin="16">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="65"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" TextWrapping="Wrap">Do you want to delete all computer name in the history?</TextBlock>
+        <Image Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Source="{StaticResource QuestionCircleic_SegoeFluent}" Width="48"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Width="120" Margin="0 0 30 0" Content="Delete history"/>
-            <Button Width="120" Margin="30 0 0 0" IsCancel="True" Content="Cancel"/>
-        </StackPanel>        
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap">Do you want to clear the computer name history?</TextBlock>
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 16 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Margin="0 0 8 0" HorizontalAlignment="Stretch" Content="Clear now"/>
+            <Button Grid.Column="1" Margin="8 0 0 0" HorizontalAlignment="Stretch" IsCancel="True" Content="Cancel"/>
+        </Grid>
     </Grid>
 </Window>
