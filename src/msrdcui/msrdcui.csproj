@@ -61,8 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="HistoryDeletionConfirmDialogWindow.xaml.cs">
-      <DependentUpon>HistoryDeletionConfirmDialogWindow.xaml</DependentUpon>
+    <Compile Include="HistoryClearConfirmDialogWindow.xaml.cs">
+      <DependentUpon>HistoryClearConfirmDialogWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExceptionReportBuilder.cs" />
     <Compile Include="ExceptionReportWindow.xaml.cs">
@@ -74,7 +74,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HistoryDeletionConfirmDialogWindow.xaml">
+    <Page Include="HistoryClearConfirmDialogWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

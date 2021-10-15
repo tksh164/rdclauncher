@@ -17,9 +17,9 @@ namespace rdclauncher
     /// <summary>
     /// Interaction logic for HistoryDeletionConfirmDialogWindow.xaml
     /// </summary>
-    public partial class HistoryDeletionConfirmDialogWindow : Window
+    public partial class HistoryClearConfirmDialogWindow : Window
     {
-        public HistoryDeletionConfirmDialogWindow()
+        public HistoryClearConfirmDialogWindow()
         {
             InitializeComponent();
         }
