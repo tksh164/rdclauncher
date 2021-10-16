@@ -7,11 +7,6 @@ namespace rdclauncher
 {
     public sealed class MainWindowViewModel : ViewModelBase
     {
-        public RelayCommand ConnectCommand { get; private set; }
-        public RelayCommand OpenAboutThisAppUriCommand { get; private set; }
-        public RelayCommand ClearRemoteComputerHistoryCommand { get; private set; }
-        public RelayCommand ClearRdcWindowTitleHistoryCommand { get; private set; }
-
         public MainWindowViewModel()
         {
             ConnectCommand = new RelayCommand(ExecuteConnect, CanExecuteConnect);
@@ -20,6 +15,11 @@ namespace rdclauncher
             ClearRdcWindowTitleHistoryCommand = new RelayCommand(ExecuteClearRdcWindowTitleHistory);
             WindowTitle = WindowTitleBuilder.GetWindowTitle();
         }
+
+        public RelayCommand ConnectCommand { get; private set; }
+        public RelayCommand OpenAboutThisAppUriCommand { get; private set; }
+        public RelayCommand ClearRemoteComputerHistoryCommand { get; private set; }
+        public RelayCommand ClearRdcWindowTitleHistoryCommand { get; private set; }
 
         private string _windowTitle;
         public string WindowTitle
