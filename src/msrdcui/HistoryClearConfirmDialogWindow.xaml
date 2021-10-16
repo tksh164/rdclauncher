@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rdclauncher"
         mc:Ignorable="d"
-        Title="Clear History"
+        d:DataContext="{d:DesignInstance Type=local:HistoryClearConfirmDialogWindowViewModel}"
+        Title="{Binding WindowTitle}"
         Height="180" Width="350"
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
         FontSize="13">
@@ -21,7 +22,7 @@
 
         <Image Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Source="{StaticResource QuestionCircleic_SegoeFluent}" Width="48"/>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap">Do you want to clear the computer name history?</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding MessageText}"/>
 
         <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 16 0 0">
             <Grid.ColumnDefinitions>
@@ -29,7 +30,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Margin="0 0 8 0" HorizontalAlignment="Stretch" Content="Clear now"/>
+            <Button Grid.Column="0" Margin="0 0 8 0" HorizontalAlignment="Stretch" Content="Clear now" Command="{Binding ClearCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
             <Button Grid.Column="1" Margin="8 0 0 0" HorizontalAlignment="Stretch" IsCancel="True" Content="Cancel"/>
         </Grid>
     </Grid>
