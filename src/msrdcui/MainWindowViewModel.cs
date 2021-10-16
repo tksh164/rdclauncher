@@ -172,10 +172,19 @@ namespace rdclauncher
 
         private void ExecuteClearRemoteComputerHistory(object obj)
         {
-            const string computerHistoryClearConfirmationMessageText = "Do you want to clear all computer name in the history?" + "\n\n" +
-                "Click OK if you want to delete all computer name in the history, otherwise click Cancel.";
-            var result = MessageBox.Show(computerHistoryClearConfirmationMessageText, WindowTitle, MessageBoxButton.OKCancel, MessageBoxImage.Question, MessageBoxResult.Cancel);
-            if (result == MessageBoxResult.OK)
+            var dialogWindowViewModel = new HistoryClearConfirmDialogWindowViewModel
+            {
+                WindowTitle = "Clear Remote Computer History",
+                MessageText = "Do you want to clear the remote computer history?"
+            };
+            var dialogWindow = new HistoryClearConfirmDialogWindow()
+            {
+                Owner = obj as Window,
+                DataContext = dialogWindowViewModel,
+            };
+            _ = dialogWindow.ShowDialog();
+
+            if (dialogWindowViewModel.DialogResult == HistoryClearDialogResult.DoClear)
             {
                 RemoteComputerHistory.Clear();
                 PersistentUserSettings.ClearRemoteComputerHistory();
@@ -184,10 +193,19 @@ namespace rdclauncher
 
         private void ExecuteClearRdcWindowTitleHistory(object obj)
         {
-            const string windowTitleHistoryClearConfirmationMessageText = "Do you want to clear all window title in the history?" + "\n\n" +
-                "Click OK if you want to delete all window title in the history, otherwise click Cancel.";
-            var result = MessageBox.Show(windowTitleHistoryClearConfirmationMessageText, WindowTitle, MessageBoxButton.OKCancel, MessageBoxImage.Question, MessageBoxResult.Cancel);
-            if (result == MessageBoxResult.OK)
+            var dialogWindowViewModel = new HistoryClearConfirmDialogWindowViewModel
+            {
+                WindowTitle = "Clear Window Title History",
+                MessageText = "Do you want to clear the window title history?"
+            };
+            var dialogWindow = new HistoryClearConfirmDialogWindow()
+            {
+                Owner = obj as Window,
+                DataContext = dialogWindowViewModel,
+            };
+            _ = dialogWindow.ShowDialog();
+
+            if (dialogWindowViewModel.DialogResult == HistoryClearDialogResult.DoClear)
             {
                 RdcWindowTitleHistory.Clear();
                 PersistentUserSettings.ClearRdcWindowTitleHistory();
