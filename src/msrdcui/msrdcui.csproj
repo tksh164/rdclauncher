@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="ExceptionReportWindowViewModel.cs" />
     <Compile Include="HistoryClearConfirmDialogWindowViewModel.cs" />
+    <Compile Include="ShellStockIcon.cs" />
     <Compile Include="WindowTitleBuilder.cs" />
     <Page Include="AppDictionary.xaml">
       <SubType>Designer</SubType>
