@@ -46,6 +46,8 @@ namespace rdclauncher
                 reportText.AppendLine(ex.Message);
                 reportText.AppendFormat(@"Exception: {0}", ex.GetType().FullName);
                 reportText.AppendLine();
+                reportText.AppendFormat(@"HResult: 0x{0:x8} ({0})", ex.HResult);
+                reportText.AppendLine();
                 reportText.AppendLine(@"**** STACK TRACE ****");
                 reportText.AppendLine(ex.StackTrace);
                 ex = ex.InnerException;
