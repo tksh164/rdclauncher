@@ -18,9 +18,9 @@ The RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Rem
 
 ## 📋 Prerequisites
 
-- Windows 10
-- .NET Framework 4.7.2 or 4.8
-  - Windows 10 has the .NET Framework 4.7.2 by default.
+- Windows 11 or Windows 10
+- .NET Framework 4.7.2 or later
+  - Windows 11 and Windows 10 have the .NET Framework 4.7.2 or later by default.
 - Remote Desktop client (MSRDC)
   - You can download the Remote Desktop client installer from the [Microsoft's web page](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop). Download it from the **Windows 64-bit** link if you use 64-bit Windows, also download it from the **Windows 32-bit** link if you use 32-bit Windows.
 
