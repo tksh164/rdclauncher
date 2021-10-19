@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 
 namespace rdclauncher
 {
@@ -13,6 +14,7 @@ namespace rdclauncher
         public HistoryClearConfirmDialogWindowViewModel()
         {
             ClearCommand = new RelayCommand(ExecuteClearCommand);
+            IconImage = ShellStockIcon.GetIconImage(ShellStockIcon.StockIconKind.Warning);
             DialogResult = HistoryClearDialogResult.Cancel;
         }
 
@@ -32,6 +34,13 @@ namespace rdclauncher
         {
             get => _messageText;
             set => SetProperty(ref _messageText, value);
+        }
+
+        private ImageSource _iconImage;
+        public ImageSource IconImage
+        {
+            get => _iconImage;
+            private set => SetProperty(ref _iconImage, value);
         }
 
         private void ExecuteClearCommand(object obj)
