@@ -72,7 +72,7 @@
     <Compile Include="ViewModels\HistoryClearConfirmDialogWindowViewModel.cs" />
     <Compile Include="ShellStockIcon.cs" />
     <Compile Include="WindowTitleBuilder.cs" />
-    <Page Include="AppDictionary.xaml">
+    <Page Include="Resources\AppDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

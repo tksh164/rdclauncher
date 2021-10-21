@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:rdclauncher"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="AppDictionary.xaml"/>
+        <ResourceDictionary Source="Resources/AppDictionary.xaml"/>
     </Application.Resources>
 </Application>
