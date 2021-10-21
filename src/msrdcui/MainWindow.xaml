@@ -46,7 +46,7 @@
                 HorizontalAlignment="Center" VerticalAlignment="Center" Padding="2"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
-                Command="{Binding ClearRemoteComputerHistoryCommand}">
+                Command="{Binding ClearRemoteComputerHistoryCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
             <Image Source="{StaticResource Delete_SegoeFluentIcons}" Width="24"/>
         </Button>
 
@@ -66,7 +66,7 @@
                 HorizontalAlignment="Center" VerticalAlignment="Center" Padding="2"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
-                Command="{Binding ClearRdcWindowTitleHistoryCommand}">
+                Command="{Binding ClearRdcWindowTitleHistoryCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
             <Image Source="{StaticResource Delete_SegoeFluentIcons}" Width="24"/>
         </Button>
 
