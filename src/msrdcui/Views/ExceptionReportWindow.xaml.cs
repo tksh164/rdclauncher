@@ -1,6 +1,7 @@
 ﻿using System.Windows;
+using rdclauncher.ViewModels;
 
-namespace rdclauncher
+namespace rdclauncher.Views
 {
     /// <summary>
     /// Interaction logic for ExceptionReportWindow.xaml
