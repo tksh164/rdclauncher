@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Windows;
 
-namespace rdclauncher
+namespace rdclauncher.ViewModels
 {
     public sealed class ExceptionReportWindowViewModel : ViewModelBase
     {

@@ -2,8 +2,9 @@
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
+using rdclauncher.Views;
 
-namespace rdclauncher
+namespace rdclauncher.ViewModels
 {
     public sealed class MainWindowViewModel : ViewModelBase
     {

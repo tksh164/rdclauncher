@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace rdclauncher
+namespace rdclauncher.Views
 {
     /// <summary>
     /// Interaction logic for HistoryDeletionConfirmDialogWindow.xaml
