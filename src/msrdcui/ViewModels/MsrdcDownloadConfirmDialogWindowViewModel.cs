@@ -48,7 +48,6 @@ namespace rdclauncher.ViewModels
         private string GetLinkTextOnDownloadSite()
         {
             return Environment.Is64BitOperatingSystem ? "Windows 64-bit" : "Windows 32-bit";
-
         }
     }
 }
