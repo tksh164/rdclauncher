@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\MsrdcDownloadConfirmDialogWindowViewModel.cs" />
     <Compile Include="Views\HistoryClearConfirmDialogWindow.xaml.cs">
       <DependentUpon>HistoryClearConfirmDialogWindow.xaml</DependentUpon>
     </Compile>
