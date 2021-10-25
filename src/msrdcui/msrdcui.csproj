@@ -71,6 +71,9 @@
     <Compile Include="ViewModels\ExceptionReportWindowViewModel.cs" />
     <Compile Include="ViewModels\HistoryClearConfirmDialogWindowViewModel.cs" />
     <Compile Include="ShellStockIcon.cs" />
+    <Compile Include="Views\MsrdcDownloadConfirmDialogWindow.xaml.cs">
+      <DependentUpon>MsrdcDownloadConfirmDialogWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowTitleBuilder.cs" />
     <Page Include="Resources\AppDictionary.xaml">
       <SubType>Designer</SubType>
@@ -102,6 +105,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\MsrdcDownloadConfirmDialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
