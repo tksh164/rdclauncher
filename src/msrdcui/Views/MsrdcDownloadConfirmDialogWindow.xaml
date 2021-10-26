@@ -1,0 +1,44 @@
+﻿<Window x:Class="rdclauncher.Views.MsrdcDownloadConfirmDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:rdclauncher.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MsrdcDownloadConfirmDialogWindowViewModel}"
+        Title="Require the Microsoft Remote Desktop client"
+        Width="530" SizeToContent="Height"
+        ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
+        FontSize="13">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding IconImage}" Width="32"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="16" FontWeight="Medium">Require the Microsoft Remote Desktop client</TextBlock>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0 16 0 32" TextWrapping="Wrap">
+            RDC Launcher requires the Microsoft Remote Desktop client installation.
+            But couldn't found the Microsoft Remote Desktop client (msrdc.exe) on this system.<LineBreak/><LineBreak/>
+            You can get the Microsoft Remote Desktop client from Microsoft website. Download the <Run FontWeight="Medium" Text="{Binding LinkTextOnDownloadSite, Mode=OneWay}"/> file from the site then install it.
+        </TextBlock>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Margin="0 0 8 0" HorizontalAlignment="Stretch" IsDefault="True" Content="Open the _download stie" Command="{Binding OpenDownloadSiteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
+            <Button Grid.Column="1" Margin="8 0 0 0" HorizontalAlignment="Stretch" IsCancel="True" Content="_Later"/>
+        </Grid>
+    </Grid>
+</Window>

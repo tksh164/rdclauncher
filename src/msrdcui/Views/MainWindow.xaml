@@ -88,7 +88,8 @@
                 TabIndex="5"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12"
                 IsDefault="True" IsEnabled="{Binding IsInteractableElementsEnabled}"
-                Command="{Binding ConnectCommand}" Content="Connect"/>
+                Command="{Binding ConnectCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                Content="Connect"/>
 
         <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="3"
                    Visibility="{Binding ClosingMessageVisibility}"

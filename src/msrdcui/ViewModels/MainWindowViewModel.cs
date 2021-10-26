@@ -150,12 +150,15 @@ namespace rdclauncher.ViewModels
             }
             catch (FileNotFoundException)
             {
-                const string MsrdcExeNotFoundMessageText = "Couldn't found the Remote Desktop client for Windows Desktop (msrdc.exe) on this system. " +
-                    "This application requires the Remote Desktop client installation." + "\n\n" +
-                    "Do you want to download the Remote Desktop client? " +
-                    "Click Yes if you want to open the download page of the Remote Desktop client installer, otherwise click No.";
-                var result = MessageBox.Show(MsrdcExeNotFoundMessageText, WindowTitle, MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.Yes);
-                if (result == MessageBoxResult.Yes)
+                var dialogWindowViewModel = new MsrdcDownloadConfirmDialogWindowViewModel();
+                var dialogWindow = new MsrdcDownloadConfirmDialogWindow()
+                {
+                    Owner = obj as Window,
+                    DataContext = dialogWindowViewModel,
+                };
+                _ = dialogWindow.ShowDialog();
+
+                if (dialogWindowViewModel.DialogResult == MsrdcDownloadDialogResult.OpenDownloadSite)
                 {
                     const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
                     UriNavigator.Navigate(WindowsDesktopClientDownloadUri);
