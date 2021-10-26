@@ -178,7 +178,7 @@ namespace rdclauncher.ViewModels
         {
             var dialogWindowViewModel = new HistoryClearConfirmDialogWindowViewModel
             {
-                WindowTitle = "Clear Remote Computer History",
+                WindowTitle = "Clear the remote computer history",
                 MessageText = "Do you want to clear the remote computer history?"
             };
             var dialogWindow = new HistoryClearConfirmDialogWindow()
@@ -199,7 +199,7 @@ namespace rdclauncher.ViewModels
         {
             var dialogWindowViewModel = new HistoryClearConfirmDialogWindowViewModel
             {
-                WindowTitle = "Clear Window Title History",
+                WindowTitle = "Clear the window title history",
                 MessageText = "Do you want to clear the window title history?"
             };
             var dialogWindow = new HistoryClearConfirmDialogWindow()

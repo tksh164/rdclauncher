@@ -7,13 +7,14 @@
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:HistoryClearConfirmDialogWindowViewModel}"
         Title="{Binding WindowTitle}"
-        Height="180" Width="400"
+        Width="400" SizeToContent="Height"
         ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
         FontSize="13">
     <Grid Margin="16">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
@@ -22,16 +23,18 @@
 
         <Image Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Source="{Binding IconImage}" Width="32"/>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding MessageText}"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="16" FontWeight="Medium" Text="{Binding WindowTitle}"/>
 
-        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 16 0 0">
+        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="0 16 0 32" TextWrapping="Wrap" Text="{Binding MessageText}"/>
+
+        <Grid Grid.Row="2" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Margin="0 0 8 0" HorizontalAlignment="Stretch" Content="Clear now" Command="{Binding ClearCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
-            <Button Grid.Column="1" Margin="8 0 0 0" HorizontalAlignment="Stretch" IsCancel="True" Content="Cancel"/>
+            <Button Grid.Column="0" Margin="0 0 8 0" HorizontalAlignment="Stretch" Content="Clear _now" Command="{Binding ClearCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
+            <Button Grid.Column="1" Margin="8 0 0 0" HorizontalAlignment="Stretch" IsCancel="True" Content="_Cancel"/>
         </Grid>
     </Grid>
 </Window>
