@@ -25,7 +25,7 @@
 
         <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="16" FontWeight="Medium">Require the Microsoft Remote Desktop client</TextBlock>
 
-        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="0 16 0 32" TextWrapping="Wrap">
+        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="0 16 0 32" TextWrapping="Wrap">
             RDC Launcher requires the Microsoft Remote Desktop client installation.
             But couldn't found the Microsoft Remote Desktop client (msrdc.exe) on this system.<LineBreak/><LineBreak/>
             You can get the Microsoft Remote Desktop client from Microsoft website. Download the <Run FontWeight="Medium" Text="{Binding LinkTextOnDownloadSite, Mode=OneWay}"/> file from the site then install it.
