@@ -27,7 +27,7 @@ VIFileVersion "${APP_VERSION}.0"
 VIAddVersionKey /LANG=0 "ProductName" "${APP_DISPLAY_NAME}"
 VIAddVersionKey /LANG=0 "ProductVersion" "${APP_VERSION}"
 VIAddVersionKey /LANG=0 "FileVersion" "${APP_VERSION}"
-VIAddVersionKey /LANG=0 "FileDescription" "The RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc)."
+VIAddVersionKey /LANG=0 "FileDescription" "RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc)."
 VIAddVersionKey /LANG=0 "LegalCopyright" "Copyright (c) 2021-present Takeshi Katano. All rights reserved."
 
 #
