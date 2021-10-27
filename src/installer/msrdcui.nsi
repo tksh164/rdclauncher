@@ -222,7 +222,7 @@ Function "MsrdcDownloadPageCreator"
         ${EndIf}
     ${EndIf}
 
-    !insertmacro MUI_HEADER_TEXT "Remote Desktop client for Windows Desktop" "Download and install the Remote Desktop client for Windows Desktop."
+    !insertmacro MUI_HEADER_TEXT "Require the Microsoft Remote Desktop client" "Download and install the Microsoft Remote Desktop client."
 
     nsDialogs::Create 1018
     Pop $Dialog
@@ -230,10 +230,10 @@ Function "MsrdcDownloadPageCreator"
         Abort
     ${EndIf}
 
-    ${NSD_CreateLabel} 0 0 100% 24u "This application requires the Remote Desktop client for Windows Desktop installation.$\nDo you want to download the Remote Desktop client now? You can download it later also."
+    ${NSD_CreateLabel} 0 0 100% 24u "RDC Launcher requires the Microsoft Remote Desktop client installation.$\nDo you want to download the Microsoft Remote Desktop client now? You can download it later also."
     Pop $0
 
-    ${NSD_CreateLink} 0 36u 100% 12u "Click to open the download page of the Remote Desktop client in your browser."
+    ${NSD_CreateLink} 0 36u 100% 12u "Open the download page of the Microsoft Remote Desktop client in your browser."
     Pop $MsrdcLink
     CreateFont $1 "$(^Font)" $(^FontSize) 500 /UNDERLINE
     SendMessage $MsrdcLink ${WM_SETFONT} $1 1
