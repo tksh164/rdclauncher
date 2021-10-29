@@ -61,9 +61,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SessionScreenSizeToDisplayTextConverter.cs" />
+    <Compile Include="SessionResolutionToDisplayTextConverter.cs" />
     <Compile Include="ViewModels\MsrdcDownloadConfirmDialogWindowViewModel.cs" />
-    <Compile Include="SessionScreenSize.cs" />
+    <Compile Include="SessionsResolution.cs" />
     <Compile Include="Views\HistoryClearConfirmDialogWindow.xaml.cs">
       <DependentUpon>HistoryClearConfirmDialogWindow.xaml</DependentUpon>
     </Compile>

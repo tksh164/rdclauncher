@@ -85,18 +85,18 @@ namespace rdclauncher.ViewModels
             set => SetProperty(ref _rdcWindowTitleHistory, value);
         }
 
-        private ObservableCollection<SessionScreenSize> _sessionScreenSizeList;
-        public ObservableCollection<SessionScreenSize> SessionScreenSizeList
+        private ObservableCollection<SessionsResolution> _sessionResolutionList;
+        public ObservableCollection<SessionsResolution> SessionResolutionList
         {
-            get => _sessionScreenSizeList;
-            set => SetProperty(ref _sessionScreenSizeList, value);
+            get => _sessionResolutionList;
+            set => SetProperty(ref _sessionResolutionList, value);
         }
 
-        private SessionScreenSize _selectedSessionScreenSize;
-        public SessionScreenSize SelectedSessionScreenSize
+        private SessionsResolution _selectedSessionResolution;
+        public SessionsResolution SelectedSessionResolution
         {
-            get => _selectedSessionScreenSize;
-            set => SetProperty(ref _selectedSessionScreenSize, value);
+            get => _selectedSessionResolution;
+            set => SetProperty(ref _selectedSessionResolution, value);
         }
 
         private bool _isFitSessionToWindowEnabled = false;
@@ -156,8 +156,8 @@ namespace rdclauncher.ViewModels
                         RemoteComputer = RemoteComputer,
                         WindowTitle = RdcWindowTitle,
                         DefaultRemotePort = DefaultPortNumber,
-                        SessionScreenWidth = SelectedSessionScreenSize.ResolutionWidth,
-                        SessionScreenHeight = SelectedSessionScreenSize.ResolutionHeight,
+                        SessionResolutionWidth = SelectedSessionResolution.ResolutionWidth,
+                        SessionResolutionHeight = SelectedSessionResolution.ResolutionHeight,
                         IsFitSessionToWindowEnabled = IsFitSessionToWindowEnabled,
                         IsUpdateResolutionOnResizeEnabled = IsUpdateResolutionOnResizeEnabled,
                         IsFullScreenEnabled = IsFullScreenEnabled,

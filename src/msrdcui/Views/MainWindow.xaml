@@ -13,7 +13,7 @@
         FontSize="13"
         FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}">
     <Window.Resources>
-        <local:SessionScreenSizeToDisplayTextConverter x:Key="sessionScreenSizeToDisplayTextConverter"/>
+        <local:SessionResolutionToDisplayTextConverter x:Key="SessionResolutionToDisplayTextConverter"/>
     </Window.Resources>
 
     <Grid Margin="16">
@@ -83,11 +83,11 @@
                   TabIndex="2"
                   VerticalAlignment="Center" Padding="5"
                   IsEnabled="{Binding IsInteractableElementsEnabled}"
-                  ItemsSource="{Binding SessionScreenSizeList}"
-                  SelectedItem="{Binding SelectedSessionScreenSize}">
+                  ItemsSource="{Binding SessionResolutionList}"
+                  SelectedItem="{Binding SelectedSessionResolution}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Converter={StaticResource sessionScreenSizeToDisplayTextConverter}}"/>
+                    <TextBlock Text="{Binding Converter={StaticResource SessionResolutionToDisplayTextConverter}}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>

@@ -38,17 +38,17 @@ namespace rdclauncher.Views
                 vm.RdcWindowTitleHistory.Add(historyItem);
             }
 
-            vm.SelectedSessionScreenSize = new SessionScreenSize();
-            vm.SessionScreenSizeList = new ObservableCollection<SessionScreenSize>
+            vm.SelectedSessionResolution = new SessionsResolution();
+            vm.SessionResolutionList = new ObservableCollection<SessionsResolution>
             {
-                vm.SelectedSessionScreenSize,
-                new SessionScreenSize(2560, 1440),
-                new SessionScreenSize(1920, 1200),
-                new SessionScreenSize(1920, 1080),
-                new SessionScreenSize(1600, 1200),
-                new SessionScreenSize(1280, 1024),
-                new SessionScreenSize(1024, 768),
-                new SessionScreenSize(800, 600)
+                vm.SelectedSessionResolution,
+                new SessionsResolution(2560, 1440),
+                new SessionsResolution(1920, 1200),
+                new SessionsResolution(1920, 1080),
+                new SessionsResolution(1600, 1200),
+                new SessionsResolution(1280, 1024),
+                new SessionsResolution(1024, 768),
+                new SessionsResolution(800, 600)
             };
 
             return vm;

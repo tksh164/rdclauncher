@@ -12,8 +12,8 @@ namespace rdclauncher
         public string RemoteComputer { get; set; }
         public string WindowTitle { get; set; }
         public uint DefaultRemotePort { get; set; }
-        public int SessionScreenWidth { get; set; }
-        public int SessionScreenHeight { get; set; }
+        public int SessionResolutionWidth { get; set; }
+        public int SessionResolutionHeight { get; set; }
         public bool IsFitSessionToWindowEnabled { get; set; }
         public bool IsUpdateResolutionOnResizeEnabled { get; set; }
         public bool IsFullScreenEnabled { get; set; }
@@ -75,10 +75,10 @@ namespace rdclauncher
                 // 2: The remote session will appear full screen.
                 writer.WriteLine("screen mode id:i:{0}", settings.IsFullScreenEnabled ? "2" : "1");
 
-                if (settings.SessionScreenWidth != SessionScreenSize.UnsetResolutionValue && settings.SessionScreenHeight != SessionScreenSize.UnsetResolutionValue)
+                if (settings.SessionResolutionWidth != SessionsResolution.UnsetResolutionValue && settings.SessionResolutionHeight != SessionsResolution.UnsetResolutionValue)
                 {
-                    writer.WriteLine("desktopwidth:i:{0}", settings.SessionScreenWidth);
-                    writer.WriteLine("desktopheight:i:{0}", settings.SessionScreenHeight);
+                    writer.WriteLine("desktopwidth:i:{0}", settings.SessionResolutionWidth);
+                    writer.WriteLine("desktopheight:i:{0}", settings.SessionResolutionHeight);
                 }
             }
             return tempRdpFilePath;

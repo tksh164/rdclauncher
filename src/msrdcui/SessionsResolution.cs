@@ -2,19 +2,19 @@
 
 namespace rdclauncher
 {
-    public sealed class SessionScreenSize
+    public sealed class SessionsResolution
     {
         public const int MinimumResolution = 200;
         public const int MaximumResolution = 8192;
         public const int UnsetResolutionValue = -1;
 
-        public SessionScreenSize()
+        public SessionsResolution()
         {
             ResolutionWidth = UnsetResolutionValue;
             ResolutionHeight = UnsetResolutionValue;
         }
 
-        public SessionScreenSize(int width, int height)
+        public SessionsResolution(int width, int height)
         {
             ResolutionWidth = width;
             ResolutionHeight = height;
