@@ -85,6 +85,20 @@ namespace rdclauncher.ViewModels
             set => SetProperty(ref _rdcWindowTitleHistory, value);
         }
 
+        private ObservableCollection<SessionsResolution> _sessionResolutionList;
+        public ObservableCollection<SessionsResolution> SessionResolutionList
+        {
+            get => _sessionResolutionList;
+            set => SetProperty(ref _sessionResolutionList, value);
+        }
+
+        private SessionsResolution _selectedSessionResolution;
+        public SessionsResolution SelectedSessionResolution
+        {
+            get => _selectedSessionResolution;
+            set => SetProperty(ref _selectedSessionResolution, value);
+        }
+
         private bool _isFitSessionToWindowEnabled = false;
         public bool IsFitSessionToWindowEnabled
         {
@@ -140,8 +154,10 @@ namespace rdclauncher.ViewModels
                     MsrdcExecution.LaunchMsrdc(new MsrdcLaunchSettings()
                     {
                         RemoteComputer = RemoteComputer,
-                        WindowTitle = RdcWindowTitle,
                         DefaultRemotePort = DefaultPortNumber,
+                        WindowTitle = RdcWindowTitle,
+                        SessionResolutionWidth = SelectedSessionResolution.ResolutionWidth,
+                        SessionResolutionHeight = SelectedSessionResolution.ResolutionHeight,
                         IsFitSessionToWindowEnabled = IsFitSessionToWindowEnabled,
                         IsUpdateResolutionOnResizeEnabled = IsUpdateResolutionOnResizeEnabled,
                         IsFullScreenEnabled = IsFullScreenEnabled,

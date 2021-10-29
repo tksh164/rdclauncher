@@ -8,20 +8,25 @@
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel}"
         Title="{Binding WindowTitle}"
-        Width="550" Height="280"
+        Width="560" SizeToContent="Height"
         ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
         FontSize="13"
         FocusManager.FocusedElement="{Binding ElementName=RemoteComputer}">
+    <Window.Resources>
+        <local:SessionResolutionToDisplayTextConverter x:Key="SessionResolutionToDisplayTextConverter"/>
+    </Window.Resources>
+
     <Grid Margin="16">
         <Grid.RowDefinitions>
-            <RowDefinition Height="34"/>
-            <RowDefinition Height="34"/>
-            <RowDefinition Height="34"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="120"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="33"/>
         </Grid.ColumnDefinitions>
@@ -43,7 +48,7 @@
                   ItemsSource="{Binding RemoteComputerHistory}"
                   Text="{Binding RemoteComputer, UpdateSourceTrigger=PropertyChanged}"/>
         <Button Grid.Row="1" Grid.Column="2"
-                TabIndex="6"
+                TabIndex="7"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Padding="2"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
@@ -63,7 +68,7 @@
                   ItemsSource="{Binding RdcWindowTitleHistory}"
                   Text="{Binding RdcWindowTitle}"/>
         <Button Grid.Row="2" Grid.Column="2"
-                TabIndex="7"
+                TabIndex="8"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Padding="2"
                 IsEnabled="{Binding IsInteractableElementsEnabled}"
                 BorderThickness="0" Background="Transparent"
@@ -71,21 +76,37 @@
             <Image Source="{StaticResource Delete_SegoeFluentIcons}" Width="24"/>
         </Button>
 
-        <WrapPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
-                   Orientation="Horizontal" VerticalAlignment="Center"
+        <Label Grid.Row="3" Grid.Column="0"
+               HorizontalAlignment="Right" VerticalAlignment="Center"
+               Target="{Binding ElementName=WindowTitle}" Content="_Startup resolution"/>
+        <ComboBox Grid.Row="3" Grid.Column="1"
+                  TabIndex="2"
+                  VerticalAlignment="Center" Padding="5"
+                  IsEnabled="{Binding IsInteractableElementsEnabled}"
+                  ItemsSource="{Binding SessionResolutionList}"
+                  SelectedItem="{Binding SelectedSessionResolution}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource SessionResolutionToDisplayTextConverter}}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+                   Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,12,0,32"
                    IsEnabled="{Binding IsInteractableElementsEnabled}">
-            <CheckBox TabIndex="2" Margin="4,4,12,4" Content="Fit _session to window" IsChecked="{Binding IsFitSessionToWindowEnabled}"/>
-            <CheckBox TabIndex="3" Margin="4,4,12,4" Content="Update the _resolution on resize" IsChecked="{Binding IsUpdateResolutionOnResizeEnabled}"/>
-            <CheckBox TabIndex="4" Margin="4,4,12,4" Content="_Full screen" IsChecked="{Binding IsFullScreenEnabled}"/>
+            <CheckBox TabIndex="3" Margin="4,4,12,4" Content="Fit _session to window" IsChecked="{Binding IsFitSessionToWindowEnabled}"/>
+            <CheckBox TabIndex="4" Margin="4,4,12,4" Content="Update the _resolution on resize" IsChecked="{Binding IsUpdateResolutionOnResizeEnabled}"/>
+            <CheckBox TabIndex="5" Margin="4,4,12,4" Content="_Full screen" IsChecked="{Binding IsFullScreenEnabled}"/>
         </WrapPanel>
         
-        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
+        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
             <Hyperlink IsEnabled="{Binding IsInteractableElementsEnabled}"
                        Command="{Binding OpenAboutThisAppUriCommand}">Learn more</Hyperlink>
         </TextBlock>
 
-        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
-                TabIndex="5"
+        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"
+                TabIndex="6"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="30,12"
                 IsDefault="True" IsEnabled="{Binding IsInteractableElementsEnabled}"
                 Command="{Binding ConnectCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
