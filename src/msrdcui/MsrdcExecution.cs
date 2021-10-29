@@ -10,8 +10,8 @@ namespace rdclauncher
     internal sealed class MsrdcLaunchSettings
     { 
         public string RemoteComputer { get; set; }
-        public string WindowTitle { get; set; }
         public uint DefaultRemotePort { get; set; }
+        public string WindowTitle { get; set; }
         public int SessionResolutionWidth { get; set; }
         public int SessionResolutionHeight { get; set; }
         public bool IsFitSessionToWindowEnabled { get; set; }

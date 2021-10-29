@@ -154,8 +154,8 @@ namespace rdclauncher.ViewModels
                     MsrdcExecution.LaunchMsrdc(new MsrdcLaunchSettings()
                     {
                         RemoteComputer = RemoteComputer,
-                        WindowTitle = RdcWindowTitle,
                         DefaultRemotePort = DefaultPortNumber,
+                        WindowTitle = RdcWindowTitle,
                         SessionResolutionWidth = SelectedSessionResolution.ResolutionWidth,
                         SessionResolutionHeight = SelectedSessionResolution.ResolutionHeight,
                         IsFitSessionToWindowEnabled = IsFitSessionToWindowEnabled,
