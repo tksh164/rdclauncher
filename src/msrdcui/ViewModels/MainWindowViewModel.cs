@@ -85,6 +85,20 @@ namespace rdclauncher.ViewModels
             set => SetProperty(ref _rdcWindowTitleHistory, value);
         }
 
+        private ObservableCollection<SessionScreenSize> _sessionScreenSizeList;
+        public ObservableCollection<SessionScreenSize> SessionScreenSizeList
+        {
+            get => _sessionScreenSizeList;
+            set => SetProperty(ref _sessionScreenSizeList, value);
+        }
+
+        private SessionScreenSize _selectedSessionScreenSize;
+        public SessionScreenSize SelectedSessionScreenSize
+        {
+            get => _selectedSessionScreenSize;
+            set => SetProperty(ref _selectedSessionScreenSize, value);
+        }
+
         private bool _isFitSessionToWindowEnabled = false;
         public bool IsFitSessionToWindowEnabled
         {
