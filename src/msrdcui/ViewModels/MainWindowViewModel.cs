@@ -156,6 +156,8 @@ namespace rdclauncher.ViewModels
                         RemoteComputer = RemoteComputer,
                         WindowTitle = RdcWindowTitle,
                         DefaultRemotePort = DefaultPortNumber,
+                        SessionScreenWidth = SelectedSessionScreenSize.ResolutionWidth,
+                        SessionScreenHeight = SelectedSessionScreenSize.ResolutionHeight,
                         IsFitSessionToWindowEnabled = IsFitSessionToWindowEnabled,
                         IsUpdateResolutionOnResizeEnabled = IsUpdateResolutionOnResizeEnabled,
                         IsFullScreenEnabled = IsFullScreenEnabled,
