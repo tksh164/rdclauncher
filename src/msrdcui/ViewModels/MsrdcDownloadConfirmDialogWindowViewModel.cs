@@ -4,12 +4,6 @@ using System.Windows.Media;
 
 namespace rdclauncher.ViewModels
 {
-    public enum MsrdcDownloadDialogResult
-    {
-        Cancel,
-        OpenDownloadSite
-    }
-
     public sealed class MsrdcDownloadConfirmDialogWindowViewModel : ViewModelBase
     {
         public MsrdcDownloadConfirmDialogWindowViewModel()
@@ -17,12 +11,12 @@ namespace rdclauncher.ViewModels
             OpenDownloadSiteCommand = new RelayCommand(ExecuteOpenDownloadSiteCommand);
             IconImage = ShellStockIcon.GetIconImage(ShellStockIcon.StockIconKind.Info);
             LinkTextOnDownloadSite = GetLinkTextOnDownloadSite();
-            DialogResult = MsrdcDownloadDialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
         }
 
         public RelayCommand OpenDownloadSiteCommand { get; private set; }
 
-        public MsrdcDownloadDialogResult DialogResult { get; private set; }
+        public DialogResult DialogResult { get; private set; }
 
         private ImageSource _iconImage;
         public ImageSource IconImage
@@ -40,7 +34,7 @@ namespace rdclauncher.ViewModels
 
         private void ExecuteOpenDownloadSiteCommand(object obj)
         {
-            DialogResult = MsrdcDownloadDialogResult.OpenDownloadSite;
+            DialogResult = DialogResult.DoIt;
             Window dialogWindow = obj as Window;
             dialogWindow.Close();
         }

@@ -174,7 +174,7 @@ namespace rdclauncher.ViewModels
                 };
                 _ = dialogWindow.ShowDialog();
 
-                if (dialogWindowViewModel.DialogResult == MsrdcDownloadDialogResult.OpenDownloadSite)
+                if (dialogWindowViewModel.DialogResult == DialogResult.DoIt)
                 {
                     const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
                     UriNavigator.Navigate(WindowsDesktopClientDownloadUri);
@@ -204,7 +204,7 @@ namespace rdclauncher.ViewModels
             };
             _ = dialogWindow.ShowDialog();
 
-            if (dialogWindowViewModel.DialogResult == HistoryClearDialogResult.DoClear)
+            if (dialogWindowViewModel.DialogResult == DialogResult.DoIt)
             {
                 RemoteComputerHistory.Clear();
                 PersistentUserSettings.ClearRemoteComputerHistory();
@@ -225,7 +225,7 @@ namespace rdclauncher.ViewModels
             };
             _ = dialogWindow.ShowDialog();
 
-            if (dialogWindowViewModel.DialogResult == HistoryClearDialogResult.DoClear)
+            if (dialogWindowViewModel.DialogResult == DialogResult.DoIt)
             {
                 RdcWindowTitleHistory.Clear();
                 PersistentUserSettings.ClearRdcWindowTitleHistory();
