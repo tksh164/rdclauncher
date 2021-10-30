@@ -11,7 +11,7 @@ Unicode true
 !define APP_NAME_LC "rdclauncher"
 !define APP_DISPLAY_NAME "RDC Launcher"
 !define APP_VERSION_MAJOR 0
-!define APP_VERSION_MINOR 6
+!define APP_VERSION_MINOR 7
 !define APP_VERSION_PATCH 0
 !define APP_VERSION "${APP_VERSION_MAJOR}.${APP_VERSION_MINOR}.${APP_VERSION_PATCH}"
 !define APP_ICON "..\msrdcui\Resources\msrdcui0.ico"
