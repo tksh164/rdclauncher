@@ -12,6 +12,17 @@ namespace rdclauncher.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            if (!MsrdcExecution.IsMsrdcInstalled())
+            {
+                var dialogWindow = new MsrdcDownloadConfirmDialogWindow()
+                {
+                    DataContext = new MsrdcDownloadConfirmDialogWindowViewModel(),
+                };
+                _ = dialogWindow.ShowDialog();
+                Application.Current.Shutdown();
+            }
+
             DataContext = GetInitializedViewModel();
         }
 

@@ -41,6 +41,19 @@ namespace rdclauncher
             }
         }
 
+        public static bool IsMsrdcInstalled()
+        {
+            try
+            {
+                _ = GetMsrdcExeFilePath();
+                return true;
+            }
+            catch (FileNotFoundException)
+            {
+                return false;
+            }
+        }
+
         private static string CreateTempRdpFile(MsrdcLaunchSettings settings)
         {
             var rdcDestination = GetRdcDestination(settings.RemoteComputer, settings.DefaultRemotePort);
