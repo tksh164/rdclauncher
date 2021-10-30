@@ -166,19 +166,12 @@ namespace rdclauncher.ViewModels
             }
             catch (FileNotFoundException)
             {
-                var dialogWindowViewModel = new MsrdcDownloadConfirmDialogWindowViewModel();
                 var dialogWindow = new MsrdcDownloadConfirmDialogWindow()
                 {
                     Owner = obj as Window,
-                    DataContext = dialogWindowViewModel,
+                    DataContext = new MsrdcDownloadConfirmDialogWindowViewModel(),
                 };
                 _ = dialogWindow.ShowDialog();
-
-                if (dialogWindowViewModel.DialogResult == DialogResult.DoIt)
-                {
-                    const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
-                    UriNavigator.Navigate(WindowsDesktopClientDownloadUri);
-                }
             }
 
             Application.Current.Shutdown();
