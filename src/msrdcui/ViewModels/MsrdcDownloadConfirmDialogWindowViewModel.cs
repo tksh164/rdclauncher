@@ -11,12 +11,9 @@ namespace rdclauncher.ViewModels
             OpenDownloadSiteCommand = new RelayCommand(ExecuteOpenDownloadSiteCommand);
             IconImage = ShellStockIcon.GetIconImage(ShellStockIcon.StockIconKind.Info);
             LinkTextOnDownloadSite = GetLinkTextOnDownloadSite();
-            DialogResult = DialogResult.Cancel;
         }
 
         public RelayCommand OpenDownloadSiteCommand { get; private set; }
-
-        public DialogResult DialogResult { get; private set; }
 
         private ImageSource _iconImage;
         public ImageSource IconImage
@@ -34,7 +31,8 @@ namespace rdclauncher.ViewModels
 
         private void ExecuteOpenDownloadSiteCommand(object obj)
         {
-            DialogResult = DialogResult.DoIt;
+            const string MsrdcWindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
+            UriNavigator.Navigate(MsrdcWindowsDesktopClientDownloadUri);
             Window dialogWindow = obj as Window;
             dialogWindow.Close();
         }
