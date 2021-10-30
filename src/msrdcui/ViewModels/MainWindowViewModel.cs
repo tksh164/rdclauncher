@@ -185,19 +185,16 @@ namespace rdclauncher.ViewModels
 
         private void ExecuteClearRemoteComputerHistory(object obj)
         {
-            var dialogWindowViewModel = new HistoryClearConfirmDialogWindowViewModel
-            {
-                WindowTitle = "Clear the remote computer history",
-                MessageText = "Do you want to clear the remote computer history?"
-            };
             var dialogWindow = new HistoryClearConfirmDialogWindow()
             {
                 Owner = obj as Window,
-                DataContext = dialogWindowViewModel,
+                DataContext = new HistoryClearConfirmDialogWindowViewModel
+                {
+                    WindowTitle = "Clear the remote computer history",
+                    MessageText = "Do you want to clear the remote computer history?"
+                },
             };
-            _ = dialogWindow.ShowDialog();
-
-            if (dialogWindowViewModel.DialogResult == DialogResult.DoIt)
+            if (dialogWindow.ShowDialog().GetValueOrDefault())
             {
                 RemoteComputerHistory.Clear();
                 PersistentUserSettings.ClearRemoteComputerHistory();
@@ -206,19 +203,16 @@ namespace rdclauncher.ViewModels
 
         private void ExecuteClearRdcWindowTitleHistory(object obj)
         {
-            var dialogWindowViewModel = new HistoryClearConfirmDialogWindowViewModel
-            {
-                WindowTitle = "Clear the window title history",
-                MessageText = "Do you want to clear the window title history?"
-            };
             var dialogWindow = new HistoryClearConfirmDialogWindow()
             {
                 Owner = obj as Window,
-                DataContext = dialogWindowViewModel,
+                DataContext = new HistoryClearConfirmDialogWindowViewModel
+                {
+                    WindowTitle = "Clear the window title history",
+                    MessageText = "Do you want to clear the window title history?"
+                },
             };
-            _ = dialogWindow.ShowDialog();
-
-            if (dialogWindowViewModel.DialogResult == DialogResult.DoIt)
+            if (dialogWindow.ShowDialog().GetValueOrDefault())
             {
                 RdcWindowTitleHistory.Clear();
                 PersistentUserSettings.ClearRdcWindowTitleHistory();

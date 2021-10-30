@@ -9,12 +9,9 @@ namespace rdclauncher.ViewModels
         {
             ClearCommand = new RelayCommand(ExecuteClearCommand);
             IconImage = ShellStockIcon.GetIconImage(ShellStockIcon.StockIconKind.Warning);
-            DialogResult = DialogResult.Cancel;
         }
 
         public RelayCommand ClearCommand { get; private set; }
-
-        public DialogResult DialogResult { get; private set;}
 
         private string _windowTitle;
         public string WindowTitle
@@ -39,8 +36,8 @@ namespace rdclauncher.ViewModels
 
         private void ExecuteClearCommand(object obj)
         {
-            DialogResult = DialogResult.DoIt;
             Window dialogWindow = obj as Window;
+            dialogWindow.DialogResult = true;
             dialogWindow.Close();
         }
     }

@@ -61,7 +61,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DialogResult.cs" />
     <Compile Include="SessionResolutionToDisplayTextConverter.cs" />
     <Compile Include="ViewModels\MsrdcDownloadConfirmDialogWindowViewModel.cs" />
     <Compile Include="SessionsResolution.cs" />
