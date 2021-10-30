@@ -31,8 +31,8 @@ namespace rdclauncher.ViewModels
 
         private void ExecuteOpenDownloadSiteCommand(object obj)
         {
-            const string WindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
-            UriNavigator.Navigate(WindowsDesktopClientDownloadUri);
+            const string MsrdcWindowsDesktopClientDownloadUri = "https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop";
+            UriNavigator.Navigate(MsrdcWindowsDesktopClientDownloadUri);
             Window dialogWindow = obj as Window;
             dialogWindow.Close();
         }
