@@ -3,24 +3,18 @@ using System.Windows.Media;
 
 namespace rdclauncher.ViewModels
 {
-    public enum HistoryClearDialogResult
-    {
-        Cancel,
-        DoClear
-    }
-
     public sealed class HistoryClearConfirmDialogWindowViewModel : ViewModelBase
     {
         public HistoryClearConfirmDialogWindowViewModel()
         {
             ClearCommand = new RelayCommand(ExecuteClearCommand);
             IconImage = ShellStockIcon.GetIconImage(ShellStockIcon.StockIconKind.Warning);
-            DialogResult = HistoryClearDialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
         }
 
         public RelayCommand ClearCommand { get; private set; }
 
-        public HistoryClearDialogResult DialogResult { get; private set;}
+        public DialogResult DialogResult { get; private set;}
 
         private string _windowTitle;
         public string WindowTitle
@@ -45,7 +39,7 @@ namespace rdclauncher.ViewModels
 
         private void ExecuteClearCommand(object obj)
         {
-            DialogResult = HistoryClearDialogResult.DoClear;
+            DialogResult = DialogResult.DoIt;
             Window dialogWindow = obj as Window;
             dialogWindow.Close();
         }
