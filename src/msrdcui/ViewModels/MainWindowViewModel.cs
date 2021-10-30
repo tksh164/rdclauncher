@@ -195,9 +195,7 @@ namespace rdclauncher.ViewModels
                 Owner = obj as Window,
                 DataContext = dialogWindowViewModel,
             };
-            _ = dialogWindow.ShowDialog();
-
-            if (dialogWindowViewModel.DialogResult == DialogResult.DoIt)
+            if (dialogWindow.ShowDialog().GetValueOrDefault())
             {
                 RemoteComputerHistory.Clear();
                 PersistentUserSettings.ClearRemoteComputerHistory();
@@ -216,9 +214,7 @@ namespace rdclauncher.ViewModels
                 Owner = obj as Window,
                 DataContext = dialogWindowViewModel,
             };
-            _ = dialogWindow.ShowDialog();
-
-            if (dialogWindowViewModel.DialogResult == DialogResult.DoIt)
+            if (dialogWindow.ShowDialog().GetValueOrDefault())
             {
                 RdcWindowTitleHistory.Clear();
                 PersistentUserSettings.ClearRdcWindowTitleHistory();
