@@ -185,15 +185,14 @@ namespace rdclauncher.ViewModels
 
         private void ExecuteClearRemoteComputerHistory(object obj)
         {
-            var dialogWindowViewModel = new HistoryClearConfirmDialogWindowViewModel
-            {
-                WindowTitle = "Clear the remote computer history",
-                MessageText = "Do you want to clear the remote computer history?"
-            };
             var dialogWindow = new HistoryClearConfirmDialogWindow()
             {
                 Owner = obj as Window,
-                DataContext = dialogWindowViewModel,
+                DataContext = new HistoryClearConfirmDialogWindowViewModel
+                {
+                    WindowTitle = "Clear the remote computer history",
+                    MessageText = "Do you want to clear the remote computer history?"
+                },
             };
             if (dialogWindow.ShowDialog().GetValueOrDefault())
             {
@@ -204,15 +203,14 @@ namespace rdclauncher.ViewModels
 
         private void ExecuteClearRdcWindowTitleHistory(object obj)
         {
-            var dialogWindowViewModel = new HistoryClearConfirmDialogWindowViewModel
-            {
-                WindowTitle = "Clear the window title history",
-                MessageText = "Do you want to clear the window title history?"
-            };
             var dialogWindow = new HistoryClearConfirmDialogWindow()
             {
                 Owner = obj as Window,
-                DataContext = dialogWindowViewModel,
+                DataContext = new HistoryClearConfirmDialogWindowViewModel
+                {
+                    WindowTitle = "Clear the window title history",
+                    MessageText = "Do you want to clear the window title history?"
+                },
             };
             if (dialogWindow.ShowDialog().GetValueOrDefault())
             {
