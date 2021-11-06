@@ -37,7 +37,7 @@ namespace rdclauncher
         private static class NativeMethods
         {
             [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false, SetLastError = false)]
-            public static extern void SHGetStockIconInfo(SHSTOCKICONID siid, GetStockIconInfoFlags uFlags, [In][Out] SHSTOCKICONINFO psii);
+            public static extern void SHGetStockIconInfo([In] SHSTOCKICONID siid, [In] GetStockIconInfoFlags uFlags, [In][Out] SHSTOCKICONINFO psii);
 
             public enum SHSTOCKICONID : uint
             {
@@ -167,7 +167,7 @@ namespace rdclauncher
             }
 
             [DllImport("user32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, SetLastError = true)]
-            public static extern bool DestroyIcon(IntPtr hIcon);
+            public static extern bool DestroyIcon([In] IntPtr hIcon);
         }
     }
 }
