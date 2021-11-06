@@ -18,14 +18,11 @@ namespace rdclauncher
 
         public static ImageSource GetIconImage(StockIconKind iconKind)
         {
-            var stockIconInfo = new NativeMethods.SHSTOCKICONINFO()
-            {
-                cbSize = (uint)Marshal.SizeOf<NativeMethods.SHSTOCKICONINFO>(),
-            };
+            var stockIconInfo = new NativeMethods.SHSTOCKICONINFO();
 
             try
             {
-                NativeMethods.SHGetStockIconInfo((NativeMethods.SHSTOCKICONID)iconKind, NativeMethods.GetStockIconInfoFlags.SHGSI_ICON | NativeMethods.GetStockIconInfoFlags.SHGSI_LARGEICON, ref stockIconInfo);
+                NativeMethods.SHGetStockIconInfo((NativeMethods.SHSTOCKICONID)iconKind, NativeMethods.GetStockIconInfoFlags.SHGSI_ICON | NativeMethods.GetStockIconInfoFlags.SHGSI_LARGEICON, stockIconInfo);
                 return Imaging.CreateBitmapSourceFromHIcon(stockIconInfo.hIcon, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
             }
             finally
@@ -40,7 +37,7 @@ namespace rdclauncher
         private static class NativeMethods
         {
             [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false, SetLastError = false)]
-            public static extern void SHGetStockIconInfo(SHSTOCKICONID siid, GetStockIconInfoFlags uFlags, ref SHSTOCKICONINFO psii);
+            public static extern void SHGetStockIconInfo(SHSTOCKICONID siid, GetStockIconInfoFlags uFlags, [In][Out] SHSTOCKICONINFO psii);
 
             public enum SHSTOCKICONID : uint
             {
@@ -156,12 +153,12 @@ namespace rdclauncher
                 SHGSI_SHELLICONSIZE = 0x000000004   // Get shell size icon
             }
 
-            public const int MAX_PATH = 260;
+            private const int MAX_PATH = 260;
 
             [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-            public struct SHSTOCKICONINFO
+            public class SHSTOCKICONINFO
             {
-                public uint cbSize;
+                public int cbSize = Marshal.SizeOf<SHSTOCKICONINFO>();
                 public IntPtr hIcon;
                 public int iSysImageIndex;
                 public int iIcon;
