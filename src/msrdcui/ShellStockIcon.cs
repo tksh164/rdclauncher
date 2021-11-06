@@ -153,7 +153,7 @@ namespace rdclauncher
                 SHGSI_SHELLICONSIZE = 0x000000004   // Get shell size icon
             }
 
-            public const int MAX_PATH = 260;
+            private const int MAX_PATH = 260;
 
             [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
             public class SHSTOCKICONINFO
