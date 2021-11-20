@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component>
+				<File Id="file_81d1d3c061cc44dcbcc7b65add145178" Name="$(var.msrdcui.TargetFileName)" KeyPath="yes" Source="$(var.msrdcui.TargetPath)" Assembly="no"/>
+			</Component>
+			<Component>
+				<File Id="file_437b5f7a632147a69a964782eb183b12" Name="$(var.msrdcui.TargetFileName).config" KeyPath="yes" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetFileName).config" Assembly="no"/>
+			</Component>
+			<Component>
+				<File Id="file_2b2d7d58b4cd4c6aa3efe8cb0a7b10d6" Name="$(var.msrdcui.TargetName).pdb" KeyPath="yes" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetName).pdb" Assembly="no"/>
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
