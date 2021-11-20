@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+	<String Id="MsrdcInstallStepsDialog_Title">Download and Install Prerequisite Component</String>
+	<String Id="MsrdcInstallStepsDialog_Description">The Microsoft Remote Desktop client needs to be installed because RDC Launcher requires it to work correctly. Also, you need install it separately with the installation that you run now.
+
+		You can download and install the Microsoft Remote Desktop client by the following steps. It can be download and install after finished this installation also.</String>
+	<String Id="MsrdcInstallStepsDialog_InstallSteps">1. Open <![CDATA[<a href="https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windowsdesktop">the download page of the Microsoft Remote Desktop client</a>]]> in your browser.
+
+		2. Download the Microsoft Remote Desktop client installer from the "[MsrdcLinkText]" link in the page.
+
+		3. Install the Microsoft Remote Desktop client by the downloaded installer.</String>
+</WixLocalization>
