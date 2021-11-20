@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="msi" Language="1033" Version="1.0.0.0" Manufacturer="" UpgradeCode="96f6d0a9-2a7a-4afc-b2e4-4a1c3e5dd8cf">
+	<Product Id="*" Name="msi" Language="1033" Version="1.0.0.0" Manufacturer="Takeshi Katano" UpgradeCode="96f6d0a9-2a7a-4afc-b2e4-4a1c3e5dd8cf">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
