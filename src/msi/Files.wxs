@@ -11,6 +11,9 @@
 			<Component>
 				<File Id="file_2b2d7d58b4cd4c6aa3efe8cb0a7b10d6" Name="$(var.msrdcui.TargetName).pdb" KeyPath="yes" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetName).pdb" Assembly="no"/>
 			</Component>
+			<Component>
+				<File Id="file_09cf5c86875b4d5ba3484fe5d87bfc3c" Name="LICENSE.txt" KeyPath="yes" Source="$(var.ProjectDir)..\..\LICENSE" Assembly="no"/>
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 </Wix>
