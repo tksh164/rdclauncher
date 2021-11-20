@@ -10,6 +10,7 @@
 			<ComponentGroupRef Id="ProductComponents" />
 		</Feature>
 
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)obj\$(var.Configuration)\license.rtf"/>
 		<UI>
 			<TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8"/>
 			<TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12"/>
