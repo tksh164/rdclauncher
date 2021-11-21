@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Id="*" Name="RDC Launcher v$(var.ProductVersion)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="Takeshi Katano" UpgradeCode="96f6d0a9-2a7a-4afc-b2e4-4a1c3e5dd8cf">
-		<Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+		<Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine"/>
 		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)"/>
 		<MediaTemplate EmbedCab="yes" />
 
+		<Icon Id="rdclauncher.ico" SourceFile="$(var.msrdcui.ProjectDir)\Resources\msrdcui0.ico"/>
+
 		<Property Id="ARPNOMODIFY" Value="1"/>
+		<Property Id="ARPPRODUCTICON" Value="rdclauncher.ico"/>
 		<Property Id="ARPHELPLINK" Value="https://github.com/tksh164/rdclauncher"/>
 		<Property Id="ARPCOMMENTS" Value="!(loc.AddRemoveAppComments)"/>
 		<Property Id="ARPREADME" Value="https://github.com/tksh164/rdclauncher/blob/main/README.md"/>
@@ -13,7 +16,7 @@
 		<Property Id="ARPURLINFOABOUT" Value="https://github.com/tksh164/rdclauncher"/>
 
 		<Feature Id="ProductFeature" Title="msi" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="ProductComponents"/>
 		</Feature>
 
 		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)obj\$(var.Configuration)\license.rtf"/>
@@ -58,7 +61,7 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="msi" />
+				<Directory Id="INSTALLFOLDER" Name="msi"/>
 			</Directory>
 		</Directory>
 	</Fragment>
