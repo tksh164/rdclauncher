@@ -28,6 +28,7 @@
 
 		<Feature Id="ProductFeature" Title="msi" Level="1">
 			<ComponentGroupRef Id="ProductComponents"/>
+			<ComponentRef Id="StartMenuShortcut"/>
 		</Feature>
 
 		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)obj\$(var.Configuration)\license.rtf"/>
@@ -74,6 +75,7 @@
 			<Directory Id="ProgramFilesFolder">
 				<Directory Id="INSTALLFOLDER" Name="RDCLauncher"/>
 			</Directory>
+			<Directory Id="ProgramMenuFolder"/>
 		</Directory>
 	</Fragment>
 </Wix>

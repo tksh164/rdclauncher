@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<Component Id="StartMenuShortcut" Directory="ProgramMenuFolder">
+			<Shortcut Id="RDCLauncherStartMenuShortcut"
+					  Name="RDC Launcher"
+					  Description="RDC Launcher v$(var.ProductVersion)"
+					  Target="[#file_81d1d3c061cc44dcbcc7b65add145178]"
+					  WorkingDirectory="INSTALLFOLDER"/>
+			<RegistryValue Root="HKCU"
+						   Key="Software\RDCLauncher\$(var.ProductVersion)\StartMenuShortcut" 
+						   Name="Installed"
+						   Type="integer"
+						   Value="1"
+						   KeyPath="yes"/>
+		</Component>
+	</Fragment>
+</Wix>
