@@ -61,7 +61,7 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="msi"/>
+				<Directory Id="INSTALLFOLDER" Name="RDCLauncher"/>
 			</Directory>
 		</Directory>
 	</Fragment>
