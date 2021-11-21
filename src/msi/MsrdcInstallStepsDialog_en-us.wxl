@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
 	<String Id="DowngradeErrorMessage">A newer version of [ProductName] is already installed.</String>
+	<String Id="AddRemoveAppComments">RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc).</String>
 	<String Id="MsrdcInstallStepsDialog_Title">[ProductName] Setup</String>
 	<String Id="MsrdcInstallStepsDialogTitle">Download and Install Prerequisite Component</String>
 	<String Id="MsrdcInstallStepsDialogDescription">The Microsoft Remote Desktop client needs to be installed because RDC Launcher requires it to work correctly. Also, you need install it separately with the installation that you run now.
