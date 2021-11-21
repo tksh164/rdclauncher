@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Id="*" Name="RDC Launcher v$(var.ProductVersion)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="Takeshi Katano" UpgradeCode="96f6d0a9-2a7a-4afc-b2e4-4a1c3e5dd8cf">
-		<Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine"/>
+		<Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" Comments="!(loc.AddRemoveAppComments)" Description="RDC Launcher v$(var.ProductVersion) Installer" Keywords="Installer;Remote Desktop client;rdclauncher;msrdc;mstsc"/>
 		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)"/>
 		<MediaTemplate EmbedCab="yes" />
 
