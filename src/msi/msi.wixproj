@@ -6,7 +6,7 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>25c9aeeb-8cbd-4232-b535-7cc886804287</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>rdclauncher</OutputName>
+    <OutputName>RDCLauncher</OutputName>
     <OutputType>Package</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
