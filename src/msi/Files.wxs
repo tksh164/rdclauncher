@@ -3,16 +3,16 @@
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 			<Component>
-				<File Id="file_81d1d3c061cc44dcbcc7b65add145178" Name="$(var.msrdcui.TargetFileName)" KeyPath="yes" Source="$(var.msrdcui.TargetPath)" Assembly="no"/>
+				<File Id="file_81d1d3c061cc44dcbcc7b65add145178" Name="$(var.msrdcui.TargetFileName)" Source="$(var.msrdcui.TargetPath)" Assembly="no" KeyPath="yes"/>
 			</Component>
 			<Component>
-				<File Id="file_437b5f7a632147a69a964782eb183b12" Name="$(var.msrdcui.TargetFileName).config" KeyPath="yes" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetFileName).config" Assembly="no"/>
+				<File Id="file_437b5f7a632147a69a964782eb183b12" Name="$(var.msrdcui.TargetFileName).config" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetFileName).config" Assembly="no" KeyPath="yes"/>
 			</Component>
 			<Component>
-				<File Id="file_2b2d7d58b4cd4c6aa3efe8cb0a7b10d6" Name="$(var.msrdcui.TargetName).pdb" KeyPath="yes" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetName).pdb" Assembly="no"/>
+				<File Id="file_2b2d7d58b4cd4c6aa3efe8cb0a7b10d6" Name="$(var.msrdcui.TargetName).pdb" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetName).pdb" Assembly="no" KeyPath="yes"/>
 			</Component>
 			<Component>
-				<File Id="file_09cf5c86875b4d5ba3484fe5d87bfc3c" Name="LICENSE.txt" KeyPath="yes" Source="$(var.ProjectDir)..\..\LICENSE" Assembly="no"/>
+				<File Id="file_09cf5c86875b4d5ba3484fe5d87bfc3c" Name="LICENSE.txt" Source="$(var.ProjectDir)..\..\LICENSE" Assembly="no" KeyPath="yes"/>
 			</Component>
 		</ComponentGroup>
 	</Fragment>
