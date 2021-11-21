@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Fragment>
+		<!-- The download link text in the MSRDC download page -->
 		<Property Id="MsrdcLinkText">Windows 64-bit</Property>
 		<Property Id="MsrdcLinkTextX86">Windows 32-bit</Property>
 		<SetProperty Id="MsrdcLinkText" After="LaunchConditions" Sequence="ui" Value="[MsrdcLinkTextX86]">%PROCESSOR_ARCHITECTURE = "x86"</SetProperty>
