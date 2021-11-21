@@ -2,7 +2,6 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Id="*" Name="RDC Launcher v$(var.ProductVersion)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="Takeshi Katano" UpgradeCode="96f6d0a9-2a7a-4afc-b2e4-4a1c3e5dd8cf">
 		<Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
-
 		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)"/>
 		<MediaTemplate EmbedCab="yes" />
 
@@ -32,11 +31,9 @@
 			<DialogRef Id="ProgressDlg"/>
 			<DialogRef Id="ResumeDlg"/>
 			<DialogRef Id="UserExit"/>
-
 			<DialogRef Id="MsrdcInstallStepsDialog"/>
 
-			<Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseAgreementDlg">NOT Installed AND NOT PATCH</Publish>
-			<Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">Installed AND PATCH</Publish>
+			<Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseAgreementDlg">1</Publish>
 
 			<Publish Dialog="LicenseAgreementDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg">1</Publish>
 			<Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="MsrdcInstallStepsDialog">LicenseAccepted = "1"</Publish>
@@ -44,14 +41,14 @@
 			<Publish Dialog="MsrdcInstallStepsDialog" Control="Back" Event="NewDialog" Value="LicenseAgreementDlg">1</Publish>
 			<Publish Dialog="MsrdcInstallStepsDialog" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
 
-			<Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MsrdcInstallStepsDialog">1</Publish>
-			<Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg">Installed AND PATCH</Publish>
-
 			<Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
 
 			<Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
 			<Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
 			<Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+
+			<Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MsrdcInstallStepsDialog">NOT Installed AND NOT PATCH</Publish>
+			<Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg">Installed OR PATCH</Publish>
 
 			<Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return">1</Publish>
 		</UI>
