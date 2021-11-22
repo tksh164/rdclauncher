@@ -47,10 +47,10 @@
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BuildSupportScripts" />
+    <Folder Include="Assets" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BuildSupportScripts\txt2rtf.ps1" />
+    <Content Include="Assets\txt2rtf.ps1" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
@@ -58,7 +58,7 @@
     <Error Text="The WiX Toolset v3.11 (or newer) build tools must be installed to build this project. To download the WiX Toolset, see http://wixtoolset.org/releases/" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>powershell -File "$(ProjectDir)BuildSupportScripts\txt2rtf.ps1" -TxtFilePath "$(ProjectDir)..\..\LICENSE" -RtfFilePath "$(ProjectDir)obj\$(ConfigurationName)\license.rtf"</PreBuildEvent>
+    <PreBuildEvent>powershell -File "$(ProjectDir)Assets\txt2rtf.ps1" -TxtFilePath "$(ProjectDir)..\..\LICENSE" -RtfFilePath "$(ProjectDir)obj\$(ConfigurationName)\license.rtf"</PreBuildEvent>
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
