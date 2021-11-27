@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Id="*"
-			 Name="RDC Launcher v$(var.ProductVersion)"
+			 Name="!(wix.AppNameLong) v$(var.ProductVersion)"
 			 Language="1033"
 			 Version="$(var.ProductVersion)"
 			 Manufacturer="Takeshi Katano"
@@ -11,10 +11,13 @@
 				 Compressed="yes"
 				 InstallScope="perUser"
 				 Comments="!(loc.AddRemoveAppComments)"
-				 Description="RDC Launcher v$(var.ProductVersion) Installer"
+				 Description="!(wix.AppNameLong) v$(var.ProductVersion) Installer"
 				 Keywords="Installer;Remote Desktop client;rdclauncher;msrdc;mstsc"/>
 		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)"/>
 		<MediaTemplate EmbedCab="yes" />
+
+		<WixVariable Id="AppNameShort" Value="RDCLauncher"/>
+		<WixVariable Id="AppNameLong" Value="RDC Launcher"/>
 
 		<!-- Related to Add/Remove Programs -->
 		<Icon Id="rdclauncher.ico" SourceFile="$(var.msrdcui.ProjectDir)\Resources\msrdcui0.ico"/>
@@ -25,6 +28,9 @@
 		<Property Id="ARPREADME" Value="https://github.com/tksh164/rdclauncher/blob/main/README.md"/>
 		<Property Id="ARPURLUPDATEINFO" Value="https://github.com/tksh164/rdclauncher/releases/latest"/>
 		<Property Id="ARPURLINFOABOUT" Value="https://github.com/tksh164/rdclauncher"/>
+
+		<!-- Registry for KeyPath -->
+		<WixVariable Id="KeyPathRegistryKey" Value="Software\RDCLauncher\$(var.ProductVersion)\InstalledComponents"/>
 
 		<Feature Id="ProductFeature" Title="msi" Level="1">
 			<ComponentGroupRef Id="ProductComponents"/>
@@ -80,7 +86,7 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="LocalAppDataFolder">
-				<Directory Id="INSTALLFOLDER" Name="RDCLauncher"/>
+				<Directory Id="INSTALLFOLDER" Name="!(wix.AppNameShort)"/>
 			</Directory>
 			<Directory Id="AppDataFolder">
 				<Directory Id="AppDataFolderMicrosoft" Name="Microsoft">
