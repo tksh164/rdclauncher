@@ -23,5 +23,18 @@
 				<RemoveFolder Id="InstallFolder" On="uninstall"/>
 			</Component>
 		</ComponentGroup>
+		<ComponentGroup Id="StartMenuShortcutComponents" Directory="StartMenuProgramsFolder">
+			<Component>
+				<RegistryValue Root="HKCU" Key="Software\RDCLauncher\$(var.ProductVersion)\InstalledComponents" Type="integer" Name="StartMenuShortcut" Value="1" KeyPath="yes"/>
+				<Shortcut Id="StartMenuShortcut" Name="RDC Launcher" Target="[#file_81d1d3c061cc44dcbcc7b65add145178]" WorkingDirectory="INSTALLFOLDER" Description="RDC Launcher v$(var.ProductVersion)"/>
+			</Component>
+			<Component>
+				<RegistryValue Root="HKCU" Key="Software\RDCLauncher\$(var.ProductVersion)\InstalledComponents" Type="integer" Name="StartMenuProgramsFolders" Value="1" KeyPath="yes"/>
+				<RemoveFolder Id="RemoveAppDataFolderMicrosoft" On="uninstall" Directory="AppDataFolderMicrosoft"/>
+				<RemoveFolder Id="RemoveAppDataFolderWindows" On="uninstall" Directory="AppDataFolderWindows"/>
+				<RemoveFolder Id="RemoveAppDataFolderStartMenu" On="uninstall" Directory="AppDataFolderStartMenu"/>
+				<RemoveFolder Id="RemoveStartMenuProgramsFolder" On="uninstall" Directory="StartMenuProgramsFolder"/>
+			</Component>
+		</ComponentGroup>
 	</Fragment>
 </Wix>

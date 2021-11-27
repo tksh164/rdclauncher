@@ -25,7 +25,6 @@
     <Compile Include="Files.wxs" />
     <Compile Include="MsrdcInstallStepsDialog.wxs" />
     <Compile Include="Product.wxs" />
-    <Compile Include="StartMenuShortcut.wxs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\msrdcui\msrdcui.csproj">
