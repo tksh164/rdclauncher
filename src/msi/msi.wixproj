@@ -20,6 +20,7 @@
     <WixVariables>
     </WixVariables>
     <DefineConstants>ProductVersion=0.7.0</DefineConstants>
+    <SuppressIces>ICE91</SuppressIces>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Components.wxs" />
