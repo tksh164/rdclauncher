@@ -22,7 +22,7 @@
     <DefineConstants>ProductVersion=0.7.0</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Files.wxs" />
+    <Compile Include="Components.wxs" />
     <Compile Include="MsrdcInstallStepsDialog.wxs" />
     <Compile Include="Product.wxs" />
   </ItemGroup>
