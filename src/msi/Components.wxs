@@ -4,19 +4,19 @@
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 			<Component Guid="e4f1f488-8b32-42af-bbf6-2d9778d75ba3">
 				<RegistryValue Root="HKCU" Key="Software\RDCLauncher\$(var.ProductVersion)\InstalledComponents" Type="integer" Name="$(var.msrdcui.TargetFileName)" Value="1" KeyPath="yes"/>
-				<File Id="file_81d1d3c061cc44dcbcc7b65add145178" Name="$(var.msrdcui.TargetFileName)" Source="$(var.msrdcui.TargetPath)" Assembly="no"/>
+				<File Id="file_81d1d3c061cc44dcbcc7b65add145178" Name="$(var.msrdcui.TargetFileName)" Source="$(var.msrdcui.TargetPath)"/>
 			</Component>
 			<Component Guid="c31b4cdd-768e-4246-a058-6aa7f675f12e">
 				<RegistryValue Root="HKCU" Key="Software\RDCLauncher\$(var.ProductVersion)\InstalledComponents" Type="integer" Name="$(var.msrdcui.TargetFileName).config" Value="1" KeyPath="yes"/>
-				<File Id="file_437b5f7a632147a69a964782eb183b12" Name="$(var.msrdcui.TargetFileName).config" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetFileName).config" Assembly="no"/>
+				<File Id="file_437b5f7a632147a69a964782eb183b12" Name="$(var.msrdcui.TargetFileName).config" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetFileName).config"/>
 			</Component>
 			<Component Guid="8d6b0e37-f3e2-4da7-b2b0-2cad533eaca7">
 				<RegistryValue Root="HKCU" Key="Software\RDCLauncher\$(var.ProductVersion)\InstalledComponents" Type="integer" Name="$(var.msrdcui.TargetName).pdb" Value="1" KeyPath="yes"/>
-				<File Id="file_2b2d7d58b4cd4c6aa3efe8cb0a7b10d6" Name="$(var.msrdcui.TargetName).pdb" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetName).pdb" Assembly="no"/>
+				<File Id="file_2b2d7d58b4cd4c6aa3efe8cb0a7b10d6" Name="$(var.msrdcui.TargetName).pdb" Source="$(var.msrdcui.TargetDir)$(var.msrdcui.TargetName).pdb"/>
 			</Component>
 			<Component Guid="7e643dca-0d88-40a5-8e0b-9eb2b62cb8ed">
 				<RegistryValue Root="HKCU" Key="Software\RDCLauncher\$(var.ProductVersion)\InstalledComponents" Type="integer" Name="LICENSE.txt" Value="1" KeyPath="yes"/>
-				<File Id="file_09cf5c86875b4d5ba3484fe5d87bfc3c" Name="LICENSE.txt" Source="$(var.ProjectDir)..\..\LICENSE" Assembly="no"/>
+				<File Id="file_09cf5c86875b4d5ba3484fe5d87bfc3c" Name="LICENSE.txt" Source="$(var.ProjectDir)..\..\LICENSE"/>
 			</Component>
 			<Component>
 				<RegistryValue Root="HKCU" Key="Software\RDCLauncher\$(var.ProductVersion)\InstalledComponents" Type="integer" Name="InstallFolder" Value="1" KeyPath="yes"/>
