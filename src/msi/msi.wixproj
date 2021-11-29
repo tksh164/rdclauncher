@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MsrdcInstallStepsDialog_en-us.wxl" />
+    <EmbeddedResource Include="Product_en-us.wxl" />
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUIExtension">
