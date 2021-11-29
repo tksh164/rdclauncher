@@ -13,6 +13,10 @@
 				 Comments="!(loc.AddRemoveAppComments)"
 				 Description="!(wix.AppNameLong) v$(var.ProductVersion) Installer"
 				 Keywords="Installer;Remote Desktop client;rdclauncher;msrdc;mstsc"/>
+
+		<!-- Windows 7 or above is required -->
+		<Condition Message="!(loc.OSRequirementMessage)"><![CDATA[Installed OR VersionNT >= 601]]></Condition>
+		
 		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)"/>
 		<MediaTemplate CompressionLevel="high" EmbedCab="yes" />
 

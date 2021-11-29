@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+	<String Id="OSRequirementMessage">Windows 7 or above is required</String>
 	<String Id="DowngradeErrorMessage">A newer version of [ProductName] is already installed.</String>
 	<String Id="AddRemoveAppComments">RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote Desktop Connection (mstsc).</String>
 </WixLocalization>
