@@ -14,7 +14,7 @@
 				 Description="!(wix.AppNameLong) v$(var.ProductVersion) Installer"
 				 Keywords="Installer;Remote Desktop client;rdclauncher;msrdc;mstsc"/>
 		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)"/>
-		<MediaTemplate EmbedCab="yes" />
+		<MediaTemplate CompressionLevel="high" EmbedCab="yes" />
 
 		<WixVariable Id="AppNameShort" Value="RDCLauncher"/>
 		<WixVariable Id="AppNameLong" Value="RDC Launcher"/>
