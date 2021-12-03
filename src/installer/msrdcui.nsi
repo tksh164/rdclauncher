@@ -73,6 +73,9 @@ ShowUninstDetails show
 # Enable DPI-aware
 ManifestDPIAware true
 
+# Change the branding text on the left bottom of the installer.
+BrandingText "${APP_DISPLAY_NAME} v${APP_VERSION} Installer"
+
 #
 # Modern UI
 #
