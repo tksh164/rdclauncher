@@ -2,16 +2,16 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="rdclauncher.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DefaultPortNumber" Type="System.UInt32" Scope="Application">
+    <Setting Name="DefaultPortNumber" Type="System.UInt32" Scope="User">
       <Value Profile="(Default)">3389</Value>
     </Setting>
-    <Setting Name="DefaultFitSessionToWindowEnabled" Type="System.Boolean" Scope="Application">
+    <Setting Name="DefaultFitSessionToWindowEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="DefaultUpdateResolutionOnResizeEnabled" Type="System.Boolean" Scope="Application">
+    <Setting Name="DefaultUpdateResolutionOnResizeEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="DefaultFullScreenEnabled" Type="System.Boolean" Scope="Application">
+    <Setting Name="DefaultFullScreenEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="RemoteComputerHistoryItem01" Type="System.String" Scope="User">
