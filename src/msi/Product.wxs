@@ -36,7 +36,7 @@
 		<Property Id="ARPURLUPDATEINFO" Value="https://github.com/tksh164/rdclauncher/releases/latest"/>
 		<Property Id="ARPURLINFOABOUT" Value="https://github.com/tksh164/rdclauncher"/>
 
-		<Feature Id="ProductFeature" Title="msi" Level="1">
+		<Feature Id="ProductFeature">
 			<ComponentGroupRef Id="ProductComponents"/>
 		</Feature>
 
