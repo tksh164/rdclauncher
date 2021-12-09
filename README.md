@@ -38,37 +38,30 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 - RDC Launcher launch at the center of screen of the mouse cursor located on.
 - You can change the default settings by edit the `rdclauncher.exe.config` that placed in the same place as the application's executable file (`rdclauncher.exe`).
 
-  - `PortNumber`: The default port number.
+  | Setting name | Value in the default settings file | Description |
+  | ---- | ---- | ---- |
+  | PortNumber | `3389` | The default port number for RDP connections. |
+  | DefaultFitSessionToWindowEnabled | `False` | If set `True`, the **Fit session to window** checkbox is checked by default. |
+  | DefaultUpdateResolutionOnResizeEnabled | `True` | If set `True`, the **Update resolution on resize** checkbox is checked by default. |
+  | DefaultFullScreenEnabled | `False` | If set `True`, the **Full screen** checkbox is checked by default. |
 
-    ```xml
-    <setting name="PortNumber" serializeAs="String">
-        <value>3389</value>
-    </setting>
-    ```
+  ```xml
+  <setting name="PortNumber" serializeAs="String">
+      <value>3389</value>
+  </setting>
 
-  - `DefaultFitSessionToWindowEnabled`: If set `True`, the **Fit session to window** checkbox is checked by default.
+  <setting name="DefaultFitSessionToWindowEnabled" serializeAs="String">
+      <value>False</value>
+  </setting>
 
-    ```xml
-    <setting name="DefaultFitSessionToWindowEnabled" serializeAs="String">
-        <value>False</value>
-    </setting>
-    ```
-
-  - `DefaultUpdateResolutionOnResizeEnabled`: If set `True`, the **Update resolution on resize** checkbox is checked by default.
-
-    ```xml
-    <setting name="DefaultUpdateResolutionOnResizeEnabled" serializeAs="String">
-        <value>True</value>
-    </setting>
-    ```
-
-  - `DefaultFullScreenEnabled`: If set `True`, the **Full screen** checkbox is checked by default.
-
-    ```xml
-    <setting name="DefaultFullScreenEnabled" serializeAs="String">
-        <value>False</value>
-    </setting>
-    ```
+  <setting name="DefaultUpdateResolutionOnResizeEnabled" serializeAs="String">
+      <value>True</value>
+  </setting>
+  
+  <setting name="DefaultFullScreenEnabled" serializeAs="String">
+      <value>False</value>
+  </setting>
+  ```
 
 - The history file located at `%LocalAppData%\rdclauncher\rdclauncher.exe_Url_<random-string>\<version>\user.config`. Delete this file if you want to delete the history.
 
