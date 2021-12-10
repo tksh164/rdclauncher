@@ -40,7 +40,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
   | Setting name | Value in the default settings file | Description |
   | ---- | ---- | ---- |
-  | PortNumber | `3389` | The default port number for RDP connections. |
+  | PortNumber | `3389` | The default port number for RDP connections when not specified the port number. |
   | DefaultFitSessionToWindowEnabled | `False` | If set `True`, the **Fit session to window** checkbox is checked by default. |
   | DefaultUpdateResolutionOnResizeEnabled | `True` | If set `True`, the **Update resolution on resize** checkbox is checked by default. |
   | DefaultFullScreenEnabled | `False` | If set `True`, the **Full screen** checkbox is checked by default. |
