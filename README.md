@@ -67,7 +67,7 @@ If you don't need this app anymore, you can uninstall it by delete the located f
 
 ## 🔨 Build from source
 
-You can build the project using [Visual Studio](https://visualstudio.microsoft.com/).
+You can build the project using [Visual Studio 2022](https://visualstudio.microsoft.com/).
 
 ## ⚖ License
 
