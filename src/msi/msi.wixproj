@@ -87,6 +87,10 @@
       <Output TaskParameter="Value" PropertyName="DefineConstants"/>
     </CreateProperty>
     <Message Importance="high" Text="DefineConstants: $(DefineConstants)"/>
+    <!-- Set TargetName with app version. -->
+    <CreateProperty Value="$(OutputName)-$(MainAssemblySemanticVersion)">
+      <Output TaskParameter="Value" PropertyName="TargetName"/>
+    </CreateProperty>
   </Target>
   <!--
   <Target Name="AfterBuild">
