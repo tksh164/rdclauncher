@@ -19,7 +19,7 @@
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <WixVariables>
     </WixVariables>
-    <DefineConstants>ProductVersion=0.7.0</DefineConstants>
+    <DefineConstants></DefineConstants>
     <SuppressIces>
     </SuppressIces>
     <LinkerAdditionalOptions>-sacl</LinkerAdditionalOptions>
@@ -64,14 +64,36 @@
     <Error Text="The WiX Toolset v3.11 (or newer) build tools must be installed to build this project. To download the WiX Toolset, see http://wixtoolset.org/releases/" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>powershell -File "$(ProjectDir)Assets\txt2rtf.ps1" -TxtFilePath "$(ProjectDir)..\..\LICENSE" -RtfFilePath "$(ProjectDir)obj\$(ConfigurationName)\license.rtf"</PreBuildEvent>
+    <PreBuildEvent>powershell -ExecutionPolicy RemoteSigned -File "$(ProjectDir)Assets\txt2rtf.ps1" -TxtFilePath "$(ProjectDir)..\..\LICENSE" -RtfFilePath "$(ProjectDir)obj\$(ConfigurationName)\license.rtf"</PreBuildEvent>
   </PropertyGroup>
   <!--
-	To modify your build process, add your task inside one of the targets below and uncomment it.
-	Other similar extension points exist, see Wix.targets.
-	<Target Name="BeforeBuild">
-	</Target>
-	<Target Name="AfterBuild">
-	</Target>
+	  To modify your build process, add your task inside one of the targets below and uncomment it.
+	  Other similar extension points exist, see Wix.targets.
 	-->
+  <Target Name="BeforeBuild">
+    <!-- Retrieve the assembly version from the actual executable file. Then, remove the private number part from version string "a.b.c.d" to convert to "a.b.c" format. -->
+    <GetAssemblyIdentity AssemblyFiles="$(ProjectDir)..\msrdcui\bin\Release\rdclauncher.exe">
+      <Output TaskParameter="Assemblies" ItemName="MainAssemblyIdentity"/>
+    </GetAssemblyIdentity>
+    <CreateProperty Value="%(MainAssemblyIdentity.Version)">
+      <Output TaskParameter="Value" PropertyName="MainAssemblyVersion"/>
+    </CreateProperty>
+    <CreateProperty Value="$(MainAssemblyVersion.Substring(0, $(MainAssemblyVersion.LastIndexOf('.'))))">
+      <Output TaskParameter="Value" PropertyName="MainAssemblySemanticVersion"/>
+    </CreateProperty>
+    <Message Importance="high" Text="MainAssemblySemanticVersion: $(MainAssemblySemanticVersion)"/>
+    <!-- Append the assembly version as ProductVersion to the DefineConstants value. The DefineConstants value is "Define preprocessor variables" in the "Build" tab in the project properties. -->
+    <CreateProperty Value="$(DefineConstants);ProductVersion=$(MainAssemblySemanticVersion)">
+      <Output TaskParameter="Value" PropertyName="DefineConstants"/>
+    </CreateProperty>
+    <Message Importance="high" Text="DefineConstants: $(DefineConstants)"/>
+    <!-- Set TargetName with app version. -->
+    <CreateProperty Value="$(OutputName)-$(MainAssemblySemanticVersion)">
+      <Output TaskParameter="Value" PropertyName="TargetName"/>
+    </CreateProperty>
+  </Target>
+  <!--
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
