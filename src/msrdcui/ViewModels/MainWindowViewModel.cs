@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Configuration;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +15,7 @@ namespace rdclauncher.ViewModels
             OpenAboutThisAppUriCommand = new RelayCommand(ExecuteOpenAboutThisAppUri);
             ClearRemoteComputerHistoryCommand = new RelayCommand(ExecuteClearRemoteComputerHistory);
             ClearRdcWindowTitleHistoryCommand = new RelayCommand(ExecuteClearRdcWindowTitleHistory);
+            OpenSettingFileCommand = new RelayCommand(ExecuteOpenSettingFile);
             WindowTitle = WindowTitleBuilder.GetWindowTitle();
         }
 
@@ -21,6 +23,7 @@ namespace rdclauncher.ViewModels
         public RelayCommand OpenAboutThisAppUriCommand { get; private set; }
         public RelayCommand ClearRemoteComputerHistoryCommand { get; private set; }
         public RelayCommand ClearRdcWindowTitleHistoryCommand { get; private set; }
+        public RelayCommand OpenSettingFileCommand { get; private set; }
 
         private string _windowTitle;
         public string WindowTitle
@@ -216,6 +219,20 @@ namespace rdclauncher.ViewModels
             {
                 RdcWindowTitleHistory.Clear();
                 PersistentUserSettings.ClearRdcWindowTitleHistory();
+            }
+        }
+
+        private void ExecuteOpenSettingFile(object obj)
+        {
+            var userConfig = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+            var userConfigFilePath = userConfig.FilePath;
+            if (File.Exists(userConfigFilePath))
+            {
+                System.Diagnostics.Process.Start(userConfigFilePath);
+            }
+            else
+            {
+                _ = MessageBox.Show("The user setting file not found.", WindowTitle, MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }

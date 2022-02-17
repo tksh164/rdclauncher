@@ -16,6 +16,12 @@
         <local:SessionResolutionToDisplayTextConverter x:Key="SessionResolutionToDisplayTextConverter"/>
     </Window.Resources>
 
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Open setting file" Command="{Binding OpenSettingFileCommand}"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+    
     <Grid Margin="16">
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
