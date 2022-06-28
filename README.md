@@ -25,9 +25,20 @@ RDC Launcher allows to use the Remote Desktop client (msrdc) as like the Remote 
 ## 📥 Install
 
 1. Download [an app's zip file](https://github.com/tksh164/rdclauncher/releases/latest).
-    - After the download the zip file, you can unblock the zip file from the file's property or using [Unblock-File](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file) cmdlet.
-2. Extract to files from the zip file. You can extract files from the **Extract All...** context menu in the File Explorer or using [Expand-Archive](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive) cmdlet.
-3. Locate to the extracted files to anywhere you like.
+
+2. After the download the zip file, you can unblock the zip file by check **Unblock** from the file's property or using [Unblock-File](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file) cmdlet.
+    
+    ```powershell
+    Unblock-File rdclauncher-x.y.z.zip
+    ```
+    
+3. Extract to files from the zip file. You can extract files from the **Extract All...** context menu in the File Explorer or using [Expand-Archive](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive) cmdlet.
+
+    ```powershell
+    Expand-Archive rdclauncher-x.y.z.zip
+    ```
+
+4. Locate to the extracted files to anywhere you like.
 
 If you don't need this app anymore, you can uninstall it by delete the located folder.
 
