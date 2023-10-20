@@ -6,12 +6,13 @@
 <p align="center">RDC Launcher allows to use the MSRDC as like the MSTSC.</p>
 
 <br />
-<h1><p align="center">😭</p></h1>
+<hr>
 
-<p>RDC Launcher doesn't work with the latest MSRDC. Also, it is difficult to fix.</p>
+> [!IMPORTANT]
+> **RDC Launcher doesn't work with the latest MSRDC.** Also, it is difficult to fix.
+> 
+> Try <strong><a href="https://github.com/tksh164/alter-rdp-client">Alter</a></strong>✨ if you are looking for a similar remote desktop client. Alter has a similar feel and usability to the RDC Launcher but it doesn't depend on MSRDC.
 
-<p>If you are looking for a similar remote desktop client, please try <strong><a href="https://github.com/tksh164/alter-rdp-client">Alter</a></strong>✨
-Alter has a similar feel and usability to the RDC Launcher but it doesn't depend on MSRDC.</p>
 <hr>
 <br />
 
