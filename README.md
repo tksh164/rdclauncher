@@ -9,9 +9,9 @@
 <hr>
 
 > [!IMPORTANT]
-> **RDC Launcher doesn't work with the latest MSRDC.** Also, it is difficult to fix.
+> **RDC Launcher doesn't work with the latest MSRDC.**
 > 
-> Try <strong><a href="https://github.com/tksh164/alter-rdp-client">Alter</a></strong>✨ if you are looking for a similar remote desktop client. Alter has a similar feel and usability to the RDC Launcher but it doesn't depend on MSRDC.
+> Try <strong><a href="https://github.com/tksh164/alter-rdp-client">Alter</a></strong>✨ if you are looking for a similar remote desktop client. **Alter** has a similar feel and usability to the RDC Launcher and it doesn't depend on MSRDC.
 
 <hr>
 <br />
